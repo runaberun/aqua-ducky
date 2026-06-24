@@ -1,0 +1,800 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1272" height="3196" viewBox="0 0 1272 3196">
+<defs>
+<filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.08"></feDropShadow></filter>
+<filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.18"></feDropShadow></filter>
+<filter id="deepShadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="12" dy="18" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"></feDropShadow></filter>
+<filter id="tinyShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.18"></feDropShadow></filter>
+<filter id="whiteShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="-7" dy="-7" stdDeviation="7" flood-color="#ffffff" flood-opacity="0.95"></feDropShadow><feDropShadow dx="8" dy="8" stdDeviation="8" flood-color="#a7b0bd" flood-opacity="0.38"></feDropShadow></filter>
+<filter id="glowCyan" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00f7ff" flood-opacity="0.9"></feDropShadow><feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#7b61ff" flood-opacity="0.65"></feDropShadow></filter>
+<filter id="glowPink" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ff3df2" flood-opacity="0.95"></feDropShadow><feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#ff3df2" flood-opacity="0.55"></feDropShadow></filter>
+<filter id="metalShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000" flood-opacity="0.25"></feDropShadow></filter>
+<linearGradient id="chrome" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f8f9fb"></stop><stop offset="0.18" stop-color="#707987"></stop><stop offset="0.32" stop-color="#ffffff"></stop><stop offset="0.52" stop-color="#9aa3ad"></stop><stop offset="0.68" stop-color="#1e2630"></stop><stop offset="0.84" stop-color="#eef2f5"></stop><stop offset="1" stop-color="#87909a"></stop></linearGradient>
+<linearGradient id="brushed" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#8d9298"></stop><stop offset="0.2" stop-color="#f0f2f3"></stop><stop offset="0.5" stop-color="#b8bdc2"></stop><stop offset="0.8" stop-color="#f4f4f4"></stop><stop offset="1" stop-color="#777e86"></stop></linearGradient>
+<linearGradient id="aurora" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#17153b"></stop><stop offset="0.28" stop-color="#6de0ff"></stop><stop offset="0.56" stop-color="#b06cff"></stop><stop offset="0.78" stop-color="#73ffbd"></stop><stop offset="1" stop-color="#ff70b8"></stop></linearGradient>
+<linearGradient id="holo" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#b8fff2"></stop><stop offset="0.18" stop-color="#fff3a6"></stop><stop offset="0.38" stop-color="#ffc7ef"></stop><stop offset="0.58" stop-color="#bba7ff"></stop><stop offset="0.78" stop-color="#9ef2ff"></stop><stop offset="1" stop-color="#ffffff"></stop></linearGradient>
+<linearGradient id="irid" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#f4fffd"></stop><stop offset="0.20" stop-color="#d0f5ff"></stop><stop offset="0.42" stop-color="#ffe0f0"></stop><stop offset="0.63" stop-color="#d7ccff"></stop><stop offset="0.82" stop-color="#f4ffd0"></stop><stop offset="1" stop-color="#ffffff"></stop></linearGradient>
+<linearGradient id="liquid" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#5d5cff"></stop><stop offset="0.5" stop-color="#00d1ff"></stop><stop offset="1" stop-color="#ff57b9"></stop></linearGradient>
+<linearGradient id="softPlastic" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff4d2"></stop><stop offset="0.5" stop-color="#ff86b6"></stop><stop offset="1" stop-color="#6ecbff"></stop></linearGradient>
+<radialGradient id="glassBg1" cx="0.2" cy="0.25" r="0.9"><stop offset="0" stop-color="#ff7adf"></stop><stop offset="0.45" stop-color="#6ea8ff"></stop><stop offset="1" stop-color="#3d2d82"></stop></radialGradient>
+<radialGradient id="ceramic" cx="0.25" cy="0.2" r="0.9"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.55" stop-color="#f4f4f0"></stop><stop offset="1" stop-color="#d5d3cd"></stop></radialGradient>
+<pattern id="paperNoise" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#f6f1e8"></rect><circle cx="2" cy="3" r="0.45" fill="#d8ccbb" opacity="0.55"></circle><circle cx="7" cy="7" r="0.35" fill="#cfc2af" opacity="0.45"></circle><path d="M0 9 L10 7" stroke="#e5dccd" stroke-width="0.4" opacity="0.55"></path></pattern>
+<pattern id="linen" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#d8cfbf"></rect><path d="M0 3 H12 M0 9 H12" stroke="#eee8dc" stroke-width="1" opacity="0.55"></path><path d="M3 0 V12 M9 0 V12" stroke="#a79a88" stroke-width="1" opacity="0.5"></path></pattern>
+<pattern id="carbon" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#161a1d"></rect><path d="M0 0 L8 0 L16 8 L16 16 L8 16 L0 8Z" fill="#252a2e" opacity="0.9"></path><path d="M8 0 L16 0 L16 8Z M0 8 L8 16 L0 16Z" fill="#0b0d0f" opacity="0.9"></path></pattern>
+<pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="transparent"></rect><circle cx="1" cy="1" r="0.45" fill="#fff" opacity="0.45"></circle><circle cx="5" cy="3" r="0.35" fill="#111" opacity="0.22"></circle><circle cx="3" cy="5" r="0.3" fill="#fff" opacity="0.35"></circle></pattern>
+<pattern id="blueprintGrid" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#0b4f8f"></rect><path d="M16 0 H0 V16" fill="none" stroke="#7db7e8" stroke-width="0.6" opacity="0.45"></path></pattern>
+<pattern id="tinyGrid" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#0b2341"></rect><path d="M12 0 H0 V12" stroke="#2dd4ff" stroke-width="0.55" opacity="0.35"></path></pattern>
+<clipPath id="clip0"><rect x="54.00" y="180.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip1"><rect x="360.00" y="180.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip2"><rect x="666.00" y="180.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip3"><rect x="972.00" y="180.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip4"><rect x="54.00" y="414.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip5"><rect x="360.00" y="414.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip6"><rect x="666.00" y="414.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip7"><rect x="972.00" y="414.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip8"><rect x="54.00" y="648.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip9"><rect x="360.00" y="648.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip10"><rect x="666.00" y="648.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip11"><rect x="972.00" y="648.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip12"><rect x="54.00" y="882.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip13"><rect x="360.00" y="882.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip14"><rect x="666.00" y="882.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip15"><rect x="972.00" y="882.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip16"><rect x="54.00" y="1116.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip17"><rect x="360.00" y="1116.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip18"><rect x="666.00" y="1116.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip19"><rect x="972.00" y="1116.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip20"><rect x="54.00" y="1350.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip21"><rect x="360.00" y="1350.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip22"><rect x="666.00" y="1350.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip23"><rect x="972.00" y="1350.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip24"><rect x="54.00" y="1584.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip25"><rect x="360.00" y="1584.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip26"><rect x="666.00" y="1584.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip27"><rect x="972.00" y="1584.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip28"><rect x="54.00" y="1818.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip29"><rect x="360.00" y="1818.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip30"><rect x="666.00" y="1818.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip31"><rect x="972.00" y="1818.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip32"><rect x="54.00" y="2052.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip33"><rect x="360.00" y="2052.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip34"><rect x="666.00" y="2052.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip35"><rect x="972.00" y="2052.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip36"><rect x="54.00" y="2286.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip37"><rect x="360.00" y="2286.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip38"><rect x="666.00" y="2286.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip39"><rect x="972.00" y="2286.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip40"><rect x="54.00" y="2520.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip41"><rect x="360.00" y="2520.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip42"><rect x="666.00" y="2520.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip43"><rect x="972.00" y="2520.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip44"><rect x="54.00" y="2754.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip45"><rect x="360.00" y="2754.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip46"><rect x="666.00" y="2754.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip47"><rect x="972.00" y="2754.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip48"><rect x="54.00" y="2988.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip49"><rect x="360.00" y="2988.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+<clipPath id="clip50"><rect x="666.00" y="2988.00" width="246.00" height="128.00" rx="10"></rect></clipPath>
+</defs>
+<rect x="0.00" y="0.00" width="1272.00" height="3196.00" rx="0.00" fill="#f5f3ee" stroke="none" stroke-width="1" opacity="1"></rect>
+<text x="36.00" y="54.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#111" text-anchor="start" opacity="1">Modern UI Material Styles Visual Cheatsheet</text>
+<text x="36.00" y="80.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#555" text-anchor="start" opacity="1">Promptable thumbnails for Claude Design: surfaces, gradients, textures, 3D treatments, and UI patterns</text>
+<line x1="36.00" y1="98.00" x2="1236.00" y2="98.00" stroke="#d8d2c7" stroke-width="1" opacity="1"></line>
+<rect x="36.00" y="136.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="164.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Flat design</text>
+<text x="54.00" y="327.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">flat color • no shadows</text>
+<rect x="54.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="#f7f9fc" stroke="#e1e7ef" stroke-width="1" opacity="1"></rect>
+<rect x="72.00" y="200.00" width="82.00" height="88.00" rx="2.00" fill="#3b82f6" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip0)"></rect>
+<circle cx="203.00" cy="222.00" r="23.00" fill="#22c55e" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip0)"></circle>
+<rect x="182.00" y="258.00" width="82.00" height="20.00" rx="0.00" fill="#f97316" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip0)"></rect>
+<polygon points="257.00,212.00 280.00,254.00 234.00,254.00" fill="#a855f7" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip0)"></polygon>
+<line x1="76.00" y1="222.00" x2="144.00" y2="222.00" stroke="#fff" stroke-width="3" opacity="0.8" clip-path="url(#clip0)"></line>
+<line x1="76.00" y1="239.00" x2="144.00" y2="239.00" stroke="#fff" stroke-width="3" opacity="0.8" clip-path="url(#clip0)"></line>
+<line x1="76.00" y1="256.00" x2="144.00" y2="256.00" stroke="#fff" stroke-width="3" opacity="0.8" clip-path="url(#clip0)"></line>
+<rect x="54.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="136.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="164.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Material Design-inspired</text>
+<text x="360.00" y="327.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">cards • elevation • FAB</text>
+<rect x="360.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="#f5f7fb" stroke="#e0e4ec" stroke-width="1" opacity="1"></rect>
+<rect x="360.00" y="180.00" width="246.00" height="28.00" rx="10.00" fill="#4361ee" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip1)"></rect>
+<text x="375.00" y="199.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="start" opacity="1" clip-path="url(#clip1)">Material</text>
+<rect x="382.00" y="225.00" width="82.00" height="52.00" rx="5.00" fill="#fff" stroke="#eef1f5" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip1)"></rect>
+<rect x="482.00" y="223.00" width="72.00" height="38.00" rx="5.00" fill="#fff" stroke="#eef1f5" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip1)"></rect>
+<circle cx="558.00" cy="273.00" r="22.00" fill="#ff4081" stroke="none" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip1)"></circle>
+<text x="558.00" y="281.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="400" fill="#fff" text-anchor="middle" opacity="1" clip-path="url(#clip1)">+</text>
+<line x1="394.00" y1="240.00" x2="448.00" y2="240.00" stroke="#c7cfdd" stroke-width="2" opacity="1" clip-path="url(#clip1)"></line>
+<line x1="394.00" y1="252.00" x2="448.00" y2="252.00" stroke="#c7cfdd" stroke-width="2" opacity="1" clip-path="url(#clip1)"></line>
+<line x1="394.00" y1="264.00" x2="448.00" y2="264.00" stroke="#c7cfdd" stroke-width="2" opacity="1" clip-path="url(#clip1)"></line>
+<rect x="360.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="136.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="164.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Fluent Design-inspired</text>
+<text x="666.00" y="327.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">acrylic • depth • light</text>
+<rect x="666.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="#f4f6fb" stroke="#dbe1ec" stroke-width="1" opacity="1"></rect>
+<circle cx="716.00" cy="216.00" r="30.00" fill="#68d8ff" stroke="none" stroke-width="1" opacity="0.8" clip-path="url(#clip2)"></circle>
+<circle cx="851.00" cy="270.00" r="45.00" fill="#7c3aed" stroke="none" stroke-width="1" opacity="0.18" clip-path="url(#clip2)"></circle>
+<rect x="700.00" y="208.00" width="156.00" height="82.00" rx="14.00" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="0.55" filter="url(#cardShadow)" clip-path="url(#clip2)"></rect>
+<rect x="716.00" y="224.00" width="86.00" height="12.00" rx="6.00" fill="#111827" stroke="none" stroke-width="1" opacity="0.78" clip-path="url(#clip2)"></rect>
+<rect x="716.00" y="246.00" width="116.00" height="8.00" rx="4.00" fill="#64748b" stroke="none" stroke-width="1" opacity="0.6" clip-path="url(#clip2)"></rect>
+<rect x="716.00" y="262.00" width="76.00" height="8.00" rx="4.00" fill="#64748b" stroke="none" stroke-width="1" opacity="0.45" clip-path="url(#clip2)"></rect>
+<line x1="684.00" y1="292.00" x2="894.00" y2="196.00" stroke="#ffffff" stroke-width="2" opacity="0.65" clip-path="url(#clip2)"></line>
+<rect x="666.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="136.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="164.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Glassmorphism</text>
+<text x="972.00" y="327.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">transparent cards • blur cue</text>
+<rect x="972.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="url(#glassBg1)" stroke="#29346d" stroke-width="1" opacity="1"></rect>
+<circle cx="1022.00" cy="218.00" r="44.00" fill="#ff77e9" stroke="none" stroke-width="1" opacity="0.62" clip-path="url(#clip3)"></circle>
+<circle cx="1144.00" cy="274.00" r="62.00" fill="#38f8c5" stroke="none" stroke-width="1" opacity="0.42" clip-path="url(#clip3)"></circle>
+<rect x="1006.00" y="208.00" width="178.00" height="82.00" rx="18.00" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.28" filter="url(#cardShadow)" clip-path="url(#clip3)"></rect>
+<rect x="1026.00" y="228.00" width="66.00" height="10.00" rx="5.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.8" clip-path="url(#clip3)"></rect>
+<rect x="1026.00" y="248.00" width="132.00" height="8.00" rx="4.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.45" clip-path="url(#clip3)"></rect>
+<circle cx="1150.00" cy="234.00" r="12.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.5" clip-path="url(#clip3)"></circle>
+<rect x="972.00" y="180.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="370.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="398.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Frosted glass</text>
+<text x="54.00" y="561.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">milky overlay • softened color</text>
+<rect x="54.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="#e7f0ff" stroke="#d5e3f6" stroke-width="1" opacity="1"></rect>
+<circle cx="89.00" cy="448.00" r="28.00" fill="#ff6b6b" stroke="none" stroke-width="1" opacity="0.85" clip-path="url(#clip4)"></circle>
+<circle cx="154.00" cy="486.00" r="28.00" fill="#4dabf7" stroke="none" stroke-width="1" opacity="0.85" clip-path="url(#clip4)"></circle>
+<circle cx="234.00" cy="458.00" r="28.00" fill="#ffd43b" stroke="none" stroke-width="1" opacity="0.85" clip-path="url(#clip4)"></circle>
+<circle cx="260.00" cy="506.00" r="28.00" fill="#69db7c" stroke="none" stroke-width="1" opacity="0.85" clip-path="url(#clip4)"></circle>
+<rect x="84.00" y="438.00" width="186.00" height="82.00" rx="16.00" fill="#f8fbff" stroke="#ffffff" stroke-width="1" opacity="0.72" filter="url(#tinyShadow)" clip-path="url(#clip4)"></rect>
+<line x1="102.00" y1="460.00" x2="250.00" y2="460.00" stroke="#7b8794" stroke-width="1.3" opacity="0.28" clip-path="url(#clip4)"></line>
+<line x1="102.00" y1="471.00" x2="250.00" y2="471.00" stroke="#7b8794" stroke-width="1.3" opacity="0.28" clip-path="url(#clip4)"></line>
+<line x1="102.00" y1="482.00" x2="250.00" y2="482.00" stroke="#7b8794" stroke-width="1.3" opacity="0.28" clip-path="url(#clip4)"></line>
+<line x1="102.00" y1="493.00" x2="250.00" y2="493.00" stroke="#7b8794" stroke-width="1.3" opacity="0.28" clip-path="url(#clip4)"></line>
+<line x1="102.00" y1="504.00" x2="250.00" y2="504.00" stroke="#7b8794" stroke-width="1.3" opacity="0.28" clip-path="url(#clip4)"></line>
+<text x="108.00" y="502.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#334155" text-anchor="start" opacity="0.45" clip-path="url(#clip4)">blurred layer</text>
+<rect x="54.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="370.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="398.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Neumorphism</text>
+<text x="360.00" y="561.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">light surface • dual shadows</text>
+<rect x="360.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="#e8edf5" stroke="#d9e0eb" stroke-width="1" opacity="1"></rect>
+<rect x="388.00" y="442.00" width="78.00" height="72.00" rx="22.00" fill="#e8edf5" stroke="#eff4fb" stroke-width="0.8" opacity="1" filter="url(#whiteShadow)" clip-path="url(#clip5)"></rect>
+<circle cx="518.00" cy="478.00" r="35.00" fill="#e8edf5" stroke="#f5f8fc" stroke-width="1" opacity="1" filter="url(#whiteShadow)" clip-path="url(#clip5)"></circle>
+<circle cx="518.00" cy="478.00" r="17.00" fill="#cfd7e3" stroke="none" stroke-width="1" opacity="0.45" clip-path="url(#clip5)"></circle>
+<rect x="482.00" y="514.00" width="80.00" height="8.00" rx="4.00" fill="#d1d9e6" stroke="none" stroke-width="1" opacity="0.9" clip-path="url(#clip5)"></rect>
+<rect x="360.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="370.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="398.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Soft UI</text>
+<text x="666.00" y="561.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">pastel controls • gentle depth</text>
+<rect x="666.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="#f8edf4" stroke="#ead9e2" stroke-width="1" opacity="1"></rect>
+<rect x="690.00" y="440.00" width="86.00" height="72.00" rx="24.00" fill="#ffd8e7" stroke="#fff3f8" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip6)"></rect>
+<circle cx="820.00" cy="462.00" r="24.00" fill="#c7f9cc" stroke="none" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip6)"></circle>
+<rect x="804.00" y="492.00" width="72.00" height="20.00" rx="10.00" fill="#b8e0ff" stroke="none" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip6)"></rect>
+<line x1="708.00" y1="466.00" x2="758.00" y2="466.00" stroke="#d85b85" stroke-width="3" opacity="0.45" clip-path="url(#clip6)"></line>
+<line x1="708.00" y1="482.00" x2="744.00" y2="482.00" stroke="#d85b85" stroke-width="3" opacity="0.35" clip-path="url(#clip6)"></line>
+<rect x="666.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="370.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="398.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Skeuomorphism</text>
+<text x="972.00" y="561.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">real-world knobs • texture</text>
+<rect x="972.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="#6b4f3a" stroke="#4d3829" stroke-width="1" opacity="1"></rect>
+<rect x="992.00" y="432.00" width="206.00" height="92.00" rx="12.00" fill="#8a674b" stroke="#3f2e22" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip7)"></rect>
+<rect x="1014.00" y="457.00" width="92.00" height="44.00" rx="22.00" fill="#c9b28f" stroke="#5c432f" stroke-width="2" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip7)"></rect>
+<circle cx="1036.00" cy="479.00" r="18.00" fill="url(#chrome)" stroke="#3f3f3f" stroke-width="1" opacity="1" filter="url(#metalShadow)" clip-path="url(#clip7)"></circle>
+<circle cx="1149.00" cy="478.00" r="28.00" fill="#2e2e2e" stroke="#111" stroke-width="2" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip7)"></circle>
+<circle cx="1149.00" cy="478.00" r="15.00" fill="url(#chrome)" stroke="#777" stroke-width="1" opacity="1" clip-path="url(#clip7)"></circle>
+<line x1="1122.00" y1="446.00" x2="1122.00" y2="510.00" stroke="#bda98a" stroke-width="1" opacity="0.45" clip-path="url(#clip7)"></line>
+<line x1="1130.00" y1="446.00" x2="1130.00" y2="510.00" stroke="#bda98a" stroke-width="1" opacity="0.45" clip-path="url(#clip7)"></line>
+<line x1="1138.00" y1="446.00" x2="1138.00" y2="510.00" stroke="#bda98a" stroke-width="1" opacity="0.45" clip-path="url(#clip7)"></line>
+<line x1="1146.00" y1="446.00" x2="1146.00" y2="510.00" stroke="#bda98a" stroke-width="1" opacity="0.45" clip-path="url(#clip7)"></line>
+<rect x="972.00" y="414.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="604.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="632.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Claymorphism</text>
+<text x="54.00" y="795.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">chunky rounded • inflated 3D</text>
+<rect x="54.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="#fff5ec" stroke="#f2dfce" stroke-width="1" opacity="1"></rect>
+<rect x="78.00" y="682.00" width="92.00" height="64.00" rx="22.00" fill="#ff9f80" stroke="#ffcfbf" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip8)"></rect>
+<circle cx="209.00" cy="704.00" r="34.00" fill="#80d8ff" stroke="#c6f0ff" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip8)"></circle>
+<rect x="200.00" y="720.00" width="66.00" height="32.00" rx="16.00" fill="#b8f28b" stroke="#e3ffd0" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip8)"></rect>
+<ellipse cx="127.00" cy="699.00" rx="32.00" ry="12.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.32" clip-path="url(#clip8)"></ellipse>
+<ellipse cx="199.00" cy="690.00" rx="18.00" ry="8.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.33" clip-path="url(#clip8)"></ellipse>
+<rect x="54.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="604.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="632.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Bento cards</text>
+<text x="360.00" y="795.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">modular rounded content blocks</text>
+<rect x="360.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="#f7f7f8" stroke="#e4e4e7" stroke-width="1" opacity="1"></rect>
+<rect x="380.00" y="666.00" width="94.00" height="48.00" rx="12.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip9)"></rect>
+<rect x="482.00" y="666.00" width="104.00" height="48.00" rx="12.00" fill="#111827" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip9)"></rect>
+<rect x="380.00" y="722.00" width="62.00" height="36.00" rx="12.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip9)"></rect>
+<rect x="450.00" y="722.00" width="72.00" height="36.00" rx="12.00" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip9)"></rect>
+<rect x="530.00" y="722.00" width="56.00" height="36.00" rx="12.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip9)"></rect>
+<text x="394.00" y="695.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip9)">01</text>
+<circle cx="510.00" cy="690.00" r="13.00" fill="#60a5fa" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip9)"></circle>
+<rect x="400.00" y="736.00" width="24.00" height="8.00" rx="4.00" fill="#9ca3af" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip9)"></rect>
+<line x1="462.00" y1="740.00" x2="506.00" y2="740.00" stroke="#111827" stroke-width="3" opacity="1" clip-path="url(#clip9)"></line>
+<rect x="360.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="604.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="632.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Aurora gradient</text>
+<text x="666.00" y="795.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">soft luminous color waves</text>
+<rect x="666.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="#14143b" stroke="#22245c" stroke-width="1" opacity="1"></rect>
+<path d="M656 742 C711 668, 752 668, 798 726 S882 752, 924 686" fill="none" stroke="#72ffd2" stroke-width="26" opacity="0.55" clip-path="url(#clip10)"></path>
+<path d="M662 706 C706 768, 790 764, 844 680 S901 654, 920 698" fill="none" stroke="#ff5bf1" stroke-width="22" opacity="0.45" clip-path="url(#clip10)"></path>
+<path d="M652 678 C738 732, 794 664, 932 760" fill="none" stroke="#7aa7ff" stroke-width="30" opacity="0.35" clip-path="url(#clip10)"></path>
+<circle cx="684.00" cy="662.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="695.00" cy="669.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="706.00" cy="676.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="717.00" cy="683.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="728.00" cy="690.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="739.00" cy="697.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="750.00" cy="704.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="761.00" cy="711.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="772.00" cy="718.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="783.00" cy="725.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="794.00" cy="732.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="805.00" cy="739.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="816.00" cy="746.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="827.00" cy="753.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="838.00" cy="662.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="849.00" cy="669.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="860.00" cy="676.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="871.00" cy="683.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="882.00" cy="690.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<circle cx="893.00" cy="697.00" r="0.80" fill="#fff" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip10)"></circle>
+<rect x="666.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="604.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="632.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Mesh gradient</text>
+<text x="972.00" y="795.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">overlapping color blobs</text>
+<rect x="972.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="#fef3c7" stroke="#f4d49a" stroke-width="1" opacity="1"></rect>
+<circle cx="1007.00" cy="684.00" r="55.00" fill="#ff7ab6" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip11)"></circle>
+<circle cx="1072.00" cy="720.00" r="65.00" fill="#7c3aed" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip11)"></circle>
+<circle cx="1152.00" cy="682.00" r="55.00" fill="#22d3ee" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip11)"></circle>
+<circle cx="1176.00" cy="748.00" r="60.00" fill="#a3e635" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip11)"></circle>
+<circle cx="1046.00" cy="756.00" r="44.00" fill="#f97316" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip11)"></circle>
+<rect x="972.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.12" clip-path="url(#clip11)"></rect>
+<line x1="972.00" y1="648.00" x2="972.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1013.00" y1="648.00" x2="1013.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1054.00" y1="648.00" x2="1054.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1095.00" y1="648.00" x2="1095.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1136.00" y1="648.00" x2="1136.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1177.00" y1="648.00" x2="1177.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="1218.00" y1="648.00" x2="1218.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="972.00" y1="648.00" x2="1218.00" y2="648.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="972.00" y1="680.00" x2="1218.00" y2="680.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="972.00" y1="712.00" x2="1218.00" y2="712.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="972.00" y1="744.00" x2="1218.00" y2="744.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<line x1="972.00" y1="776.00" x2="1218.00" y2="776.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip11)"></line>
+<rect x="972.00" y="648.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="838.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="866.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Noise gradient</text>
+<text x="54.00" y="1029.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">gradient plus visible grain</text>
+<rect x="54.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="url(#liquid)" stroke="#c8d2ee" stroke-width="1" opacity="1"></rect>
+<rect x="54.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="url(#grain)" stroke="none" stroke-width="1" opacity="0.55" clip-path="url(#clip12)"></rect>
+<rect x="80.00" y="910.00" width="194.00" height="72.00" rx="18.00" fill="#ffffff" stroke="#ffffff" stroke-width="1" opacity="0.16" clip-path="url(#clip12)"></rect>
+<text x="102.00" y="954.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="28" font-weight="800" fill="#fff" text-anchor="start" opacity="0.62" clip-path="url(#clip12)">grain</text>
+<line x1="196.00" y1="926.00" x2="256.00" y2="926.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<line x1="196.00" y1="935.00" x2="256.00" y2="935.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<line x1="196.00" y1="944.00" x2="256.00" y2="944.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<line x1="196.00" y1="953.00" x2="256.00" y2="953.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<line x1="196.00" y1="962.00" x2="256.00" y2="962.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<line x1="196.00" y1="971.00" x2="256.00" y2="971.00" stroke="#fff" stroke-width="2" opacity="0.3" clip-path="url(#clip12)"></line>
+<rect x="54.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="838.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="866.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Liquid gradient</text>
+<text x="360.00" y="1029.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">fluid blobs • wave motion cue</text>
+<rect x="360.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="#150f3b" stroke="#21185a" stroke-width="1" opacity="1"></rect>
+<path d="M356,965 C395,924 421,994 460,953 C496,915 530,981 576,932 C595,912 626,932 626,1012 L356,1012 Z" fill="url(#liquid)" stroke="none" stroke-width="1" opacity="0.92" clip-path="url(#clip13)"></path>
+<path d="M374,926 C410,894 444,942 486,910 C528,877 555,930 592,900" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.35" clip-path="url(#clip13)"></path>
+<circle cx="424.00" cy="960.00" r="9.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.35" clip-path="url(#clip13)"></circle>
+<circle cx="534.00" cy="944.00" r="13.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.28" clip-path="url(#clip13)"></circle>
+<rect x="360.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="838.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="866.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Holographic gradient</text>
+<text x="666.00" y="1029.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">pastel prism • shimmer bands</text>
+<rect x="666.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="#111827" stroke="#1f2937" stroke-width="1" opacity="1"></rect>
+<rect x="694.00" y="908.00" width="190.00" height="76.00" rx="18.00" fill="url(#holo)" stroke="#ffffff" stroke-width="1.2" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip14)"></rect>
+<line x1="702.00" y1="910.00" x2="668.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="729.00" y1="910.00" x2="695.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="756.00" y1="910.00" x2="722.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="783.00" y1="910.00" x2="749.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="810.00" y1="910.00" x2="776.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="837.00" y1="910.00" x2="803.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<line x1="864.00" y1="910.00" x2="830.00" y2="984.00" stroke="#ffffff" stroke-width="1.2" opacity="0.38" clip-path="url(#clip14)"></line>
+<text x="722.00" y="958.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="900" fill="#111827" text-anchor="start" opacity="0.55" letter-spacing="2" clip-path="url(#clip14)">HOLO</text>
+<circle cx="863.00" cy="920.00" r="5.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.85" clip-path="url(#clip14)"></circle>
+<rect x="666.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="838.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="866.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Iridescent material</text>
+<text x="972.00" y="1029.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">pearl sheen • angle color</text>
+<rect x="972.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="#f7fbff" stroke="#d5e1ec" stroke-width="1" opacity="1"></rect>
+<ellipse cx="1090.00" cy="949.00" rx="86.00" ry="45.00" fill="url(#irid)" stroke="#ffffff" stroke-width="1.3" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip15)" transform="rotate(-8 1090.00 949.00)"></ellipse>
+<path d="M1020,950 C1050,910 1118,910 1160,952" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.65" clip-path="url(#clip15)"></path>
+<path d="M1044,970 C1076,948 1122,949 1160,968" fill="none" stroke="#98a7ff" stroke-width="2" opacity="0.35" clip-path="url(#clip15)"></path>
+<circle cx="1065.00" cy="930.00" r="6.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.8" clip-path="url(#clip15)"></circle>
+<rect x="972.00" y="882.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="1072.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="1100.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Metallic chrome</text>
+<text x="54.00" y="1263.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">hard highlights • mirror silver</text>
+<rect x="54.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="#20252c" stroke="#2e3640" stroke-width="1" opacity="1"></rect>
+<rect x="84.00" y="1158.00" width="186.00" height="50.00" rx="25.00" fill="url(#chrome)" stroke="#d8dde2" stroke-width="1" opacity="1" filter="url(#metalShadow)" clip-path="url(#clip16)"></rect>
+<text x="177.00" y="1191.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="900" fill="#16202b" text-anchor="middle" opacity="1" letter-spacing="1.2" clip-path="url(#clip16)">CHROME</text>
+<line x1="96.00" y1="1166.00" x2="259.00" y2="1166.00" stroke="#fff" stroke-width="2" opacity="0.8" clip-path="url(#clip16)"></line>
+<line x1="98.00" y1="1198.00" x2="244.00" y2="1198.00" stroke="#000" stroke-width="1.5" opacity="0.45" clip-path="url(#clip16)"></line>
+<rect x="54.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="1072.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="1100.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Brushed metal</text>
+<text x="360.00" y="1263.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">linear grain • industrial plate</text>
+<rect x="360.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="url(#brushed)" stroke="#92979e" stroke-width="1" opacity="1"></rect>
+<line x1="368.00" y1="1116.00" x2="598.00" y2="1116.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1120.00" x2="598.00" y2="1120.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1124.00" x2="598.00" y2="1124.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1128.00" x2="598.00" y2="1128.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1132.00" x2="598.00" y2="1132.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1136.00" x2="598.00" y2="1136.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1140.00" x2="598.00" y2="1140.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1144.00" x2="598.00" y2="1144.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1148.00" x2="598.00" y2="1148.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1152.00" x2="598.00" y2="1152.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1156.00" x2="598.00" y2="1156.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1160.00" x2="598.00" y2="1160.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1164.00" x2="598.00" y2="1164.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1168.00" x2="598.00" y2="1168.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1172.00" x2="598.00" y2="1172.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1176.00" x2="598.00" y2="1176.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1180.00" x2="598.00" y2="1180.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1184.00" x2="598.00" y2="1184.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1188.00" x2="598.00" y2="1188.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1192.00" x2="598.00" y2="1192.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1196.00" x2="598.00" y2="1196.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1200.00" x2="598.00" y2="1200.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1204.00" x2="598.00" y2="1204.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1208.00" x2="598.00" y2="1208.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1212.00" x2="598.00" y2="1212.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1216.00" x2="598.00" y2="1216.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1220.00" x2="598.00" y2="1220.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1224.00" x2="598.00" y2="1224.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1228.00" x2="598.00" y2="1228.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1232.00" x2="598.00" y2="1232.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1236.00" x2="598.00" y2="1236.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<line x1="368.00" y1="1240.00" x2="598.00" y2="1240.00" stroke="#ffffff" stroke-width="0.55" opacity="0.28" clip-path="url(#clip17)"></line>
+<circle cx="388.00" cy="1142.00" r="8.00" fill="url(#chrome)" stroke="#666" stroke-width="1" opacity="1" clip-path="url(#clip17)"></circle>
+<line x1="384.00" y1="1142.00" x2="392.00" y2="1142.00" stroke="#555" stroke-width="1" opacity="1" clip-path="url(#clip17)"></line>
+<circle cx="578.00" cy="1142.00" r="8.00" fill="url(#chrome)" stroke="#666" stroke-width="1" opacity="1" clip-path="url(#clip17)"></circle>
+<line x1="574.00" y1="1142.00" x2="582.00" y2="1142.00" stroke="#555" stroke-width="1" opacity="1" clip-path="url(#clip17)"></line>
+<rect x="408.00" y="1164.00" width="150.00" height="34.00" rx="6.00" fill="#c3c7cc" stroke="#7b8188" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip17)"></rect>
+<text x="483.00" y="1187.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#333" text-anchor="middle" opacity="1" clip-path="url(#clip17)">brushed</text>
+<rect x="360.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="1072.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="1100.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Carbon fiber</text>
+<text x="666.00" y="1263.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">dark woven tech texture</text>
+<rect x="666.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="url(#carbon)" stroke="#262a2e" stroke-width="1" opacity="1"></rect>
+<rect x="700.00" y="1150.00" width="178.00" height="62.00" rx="12.00" fill="#0b0d0f" stroke="#3e4449" stroke-width="1.5" opacity="0.85" filter="url(#tinyShadow)" clip-path="url(#clip18)"></rect>
+<text x="789.00" y="1189.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="900" fill="#c8d0d6" text-anchor="middle" opacity="1" letter-spacing="2" clip-path="url(#clip18)">CARBON</text>
+<line x1="718.00" y1="1198.00" x2="860.00" y2="1198.00" stroke="#6b737a" stroke-width="1" opacity="0.7" clip-path="url(#clip18)"></line>
+<rect x="666.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="1072.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="1100.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Paper texture</text>
+<text x="972.00" y="1263.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">fibers • warm off-white sheet</text>
+<rect x="972.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="#e7dbc8" stroke="#d5c5ad" stroke-width="1" opacity="1"></rect>
+<rect x="1014.00" y="1134.00" width="158.00" height="94.00" rx="3.00" fill="url(#paperNoise)" stroke="#d6c7b5" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip19)"></rect>
+<polygon points="1148.00,1134.00 1172.00,1134.00 1172.00,1158.00" fill="#e6d7c4" stroke="#d6c7b5" stroke-width="1" opacity="1" clip-path="url(#clip19)"></polygon>
+<line x1="1034.00" y1="1159.00" x2="1148.00" y2="1159.00" stroke="#8a7f72" stroke-width="1" opacity="0.35" clip-path="url(#clip19)"></line>
+<line x1="1034.00" y1="1171.00" x2="1148.00" y2="1171.00" stroke="#8a7f72" stroke-width="1" opacity="0.35" clip-path="url(#clip19)"></line>
+<line x1="1034.00" y1="1183.00" x2="1148.00" y2="1183.00" stroke="#8a7f72" stroke-width="1" opacity="0.35" clip-path="url(#clip19)"></line>
+<line x1="1034.00" y1="1195.00" x2="1148.00" y2="1195.00" stroke="#8a7f72" stroke-width="1" opacity="0.35" clip-path="url(#clip19)"></line>
+<line x1="1034.00" y1="1207.00" x2="1148.00" y2="1207.00" stroke="#8a7f72" stroke-width="1" opacity="0.35" clip-path="url(#clip19)"></line>
+<text x="1034.00" y="1151.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#6b5e4f" text-anchor="start" opacity="1" clip-path="url(#clip19)">paper</text>
+<rect x="972.00" y="1116.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="1306.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="1334.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Linen texture</text>
+<text x="54.00" y="1497.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">woven cloth • tactile grid</text>
+<rect x="54.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="url(#linen)" stroke="#bdb19e" stroke-width="1" opacity="1"></rect>
+<rect x="88.00" y="1382.00" width="178.00" height="64.00" rx="12.00" fill="#efe7da" stroke="#b9aa96" stroke-width="1.5" opacity="0.72" clip-path="url(#clip20)"></rect>
+<text x="177.00" y="1418.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#756858" text-anchor="middle" opacity="0.7" clip-path="url(#clip20)">woven</text>
+<line x1="106.00" y1="1428.00" x2="248.00" y2="1428.00" stroke="#948775" stroke-width="0.8" opacity="0.35" clip-path="url(#clip20)"></line>
+<line x1="106.00" y1="1432.00" x2="248.00" y2="1432.00" stroke="#948775" stroke-width="0.8" opacity="0.35" clip-path="url(#clip20)"></line>
+<line x1="106.00" y1="1436.00" x2="248.00" y2="1436.00" stroke="#948775" stroke-width="0.8" opacity="0.35" clip-path="url(#clip20)"></line>
+<line x1="106.00" y1="1440.00" x2="248.00" y2="1440.00" stroke="#948775" stroke-width="0.8" opacity="0.35" clip-path="url(#clip20)"></line>
+<line x1="106.00" y1="1444.00" x2="248.00" y2="1444.00" stroke="#948775" stroke-width="0.8" opacity="0.35" clip-path="url(#clip20)"></line>
+<rect x="54.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="1306.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="1334.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Ceramic</text>
+<text x="360.00" y="1497.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">gloss white • soft specular</text>
+<rect x="360.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="#e9eef2" stroke="#cfd7df" stroke-width="1" opacity="1"></rect>
+<ellipse cx="482.00" cy="1425.00" rx="62.00" ry="32.00" fill="url(#ceramic)" stroke="#ffffff" stroke-width="1.5" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip21)"></ellipse>
+<ellipse cx="482.00" cy="1405.00" rx="44.00" ry="50.00" fill="url(#ceramic)" stroke="#d4d4d0" stroke-width="1" opacity="1" clip-path="url(#clip21)"></ellipse>
+<ellipse cx="465.00" cy="1388.00" rx="12.00" ry="7.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.75" clip-path="url(#clip21)"></ellipse>
+<line x1="439.00" y1="1414.00" x2="526.00" y2="1414.00" stroke="#bfc3c8" stroke-width="1" opacity="0.55" clip-path="url(#clip21)"></line>
+<rect x="360.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="1306.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="1334.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Rubberized matte</text>
+<text x="666.00" y="1497.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">low sheen • dark tactile</text>
+<rect x="666.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="#24272a" stroke="#121416" stroke-width="1" opacity="1"></rect>
+<rect x="692.00" y="1378.00" width="194.00" height="72.00" rx="16.00" fill="#303337" stroke="#16181a" stroke-width="1.5" opacity="1" clip-path="url(#clip22)"></rect>
+<rect x="712.00" y="1398.00" width="72.00" height="32.00" rx="16.00" fill="#1e2023" stroke="#454a50" stroke-width="1.2" opacity="1" clip-path="url(#clip22)"></rect>
+<circle cx="745.00" cy="1414.00" r="12.00" fill="#3c4146" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip22)"></circle>
+<rect x="808.00" y="1398.00" width="42.00" height="32.00" rx="8.00" fill="#191b1e" stroke="#4b5057" stroke-width="1.2" opacity="1" clip-path="url(#clip22)"></rect>
+<line x1="816.00" y1="1414.00" x2="842.00" y2="1414.00" stroke="#5a6068" stroke-width="2" opacity="0.75" clip-path="url(#clip22)"></line>
+<text x="789.00" y="1441.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#7f8790" text-anchor="middle" opacity="0.8" clip-path="url(#clip22)">matte</text>
+<rect x="666.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="1306.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="1334.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Soft plastic</text>
+<text x="972.00" y="1497.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">rounded glossy consumer feel</text>
+<rect x="972.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="#f8f1ff" stroke="#eadff4" stroke-width="1" opacity="1"></rect>
+<rect x="1006.00" y="1376.00" width="76.00" height="72.00" rx="20.00" fill="url(#softPlastic)" stroke="#fff" stroke-width="1.2" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip23)"></rect>
+<circle cx="1129.00" cy="1413.00" r="37.00" fill="#8de7ff" stroke="#e4fbff" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip23)"></circle>
+<ellipse cx="1030.00" cy="1393.00" rx="20.00" ry="8.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.45" clip-path="url(#clip23)"></ellipse>
+<ellipse cx="1118.00" cy="1395.00" rx="17.00" ry="8.00" fill="#fff" stroke="none" stroke-width="1" opacity="0.4" clip-path="url(#clip23)"></ellipse>
+<rect x="1116.00" y="1432.00" width="48.00" height="10.00" rx="5.00" fill="#5b68ff" stroke="none" stroke-width="1" opacity="0.45" clip-path="url(#clip23)"></rect>
+<rect x="972.00" y="1350.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="1540.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="1568.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Translucent acrylic</text>
+<text x="54.00" y="1731.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">overlapping semi-clear panels</text>
+<rect x="54.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="#eef2ff" stroke="#d7dded" stroke-width="1" opacity="1"></rect>
+<rect x="84.00" y="1606.00" width="104.00" height="76.00" rx="12.00" fill="#36c5f0" stroke="#ffffff" stroke-width="1.3" opacity="0.42" filter="url(#tinyShadow)" clip-path="url(#clip24)"></rect>
+<rect x="134.00" y="1626.00" width="112.00" height="68.00" rx="12.00" fill="#ff6f91" stroke="#ffffff" stroke-width="1.3" opacity="0.42" filter="url(#tinyShadow)" clip-path="url(#clip24)"></rect>
+<rect x="186.00" y="1602.00" width="76.00" height="86.00" rx="12.00" fill="#ffd166" stroke="#ffffff" stroke-width="1.3" opacity="0.42" filter="url(#tinyShadow)" clip-path="url(#clip24)"></rect>
+<line x1="92.00" y1="1688.00" x2="266.00" y2="1688.00" stroke="#ffffff" stroke-width="2" opacity="0.75" clip-path="url(#clip24)"></line>
+<text x="108.00" y="1639.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="start" opacity="0.75" clip-path="url(#clip24)">A</text>
+<rect x="54.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="1540.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="1568.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">OLED black</text>
+<text x="360.00" y="1731.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">true black • high contrast UI</text>
+<rect x="360.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="#000000" stroke="#111827" stroke-width="1" opacity="1"></rect>
+<text x="380.00" y="1614.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="start" opacity="1" clip-path="url(#clip25)">OLED</text>
+<rect x="380.00" y="1630.00" width="58.00" height="44.00" rx="10.00" fill="#0b0b0b" stroke="#1f2937" stroke-width="1" opacity="1" clip-path="url(#clip25)"></rect>
+<text x="409.00" y="1658.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#22c55e" text-anchor="middle" opacity="1" clip-path="url(#clip25)">98</text>
+<rect x="454.00" y="1630.00" width="58.00" height="44.00" rx="10.00" fill="#0b0b0b" stroke="#1f2937" stroke-width="1" opacity="1" clip-path="url(#clip25)"></rect>
+<line x1="466.00" y1="1658.00" x2="498.00" y2="1638.00" stroke="#60a5fa" stroke-width="3" opacity="1" clip-path="url(#clip25)"></line>
+<rect x="526.00" y="1630.00" width="58.00" height="44.00" rx="10.00" fill="#0b0b0b" stroke="#1f2937" stroke-width="1" opacity="1" clip-path="url(#clip25)"></rect>
+<circle cx="555.00" cy="1652.00" r="15.00" fill="none" stroke="#f43f5e" stroke-width="4" opacity="1" clip-path="url(#clip25)"></circle>
+<line x1="380.00" y1="1692.00" x2="582.00" y2="1692.00" stroke="#ffffff" stroke-width="1" opacity="0.18" clip-path="url(#clip25)"></line>
+<rect x="360.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="1540.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="1568.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Neon glow</text>
+<text x="666.00" y="1731.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">glowing outlines • dark base</text>
+<rect x="666.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="#070510" stroke="#170b25" stroke-width="1" opacity="1"></rect>
+<circle cx="736.00" cy="1648.00" r="34.00" fill="none" stroke="#00f7ff" stroke-width="4" opacity="1" filter="url(#glowCyan)" clip-path="url(#clip26)"></circle>
+<rect x="798.00" y="1620.00" width="70.00" height="54.00" rx="9.00" fill="none" stroke="#ff3df2" stroke-width="4" opacity="1" filter="url(#glowPink)" clip-path="url(#clip26)"></rect>
+<text x="789.00" y="1696.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#fff" text-anchor="middle" opacity="1" letter-spacing="3" clip-path="url(#clip26)" filter="url(#glowCyan)">NEON</text>
+<line x1="688.00" y1="1606.00" x2="888.00" y2="1606.00" stroke="#7b61ff" stroke-width="1" opacity="0.45" clip-path="url(#clip26)"></line>
+<rect x="666.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="1540.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="1568.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Embossed/debossed</text>
+<text x="972.00" y="1731.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">raised + recessed paper cues</text>
+<rect x="972.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="#e9edf3" stroke="#d5dce8" stroke-width="1" opacity="1"></rect>
+<rect x="1006.00" y="1618.00" width="74.00" height="58.00" rx="14.00" fill="#e9edf3" stroke="#f8fbff" stroke-width="0.8" opacity="1" filter="url(#whiteShadow)" clip-path="url(#clip27)"></rect>
+<rect x="1106.00" y="1618.00" width="74.00" height="58.00" rx="14.00" fill="#dbe2ec" stroke="#ccd4df" stroke-width="1" opacity="1" clip-path="url(#clip27)"></rect>
+<line x1="1114.00" y1="1626.00" x2="1172.00" y2="1626.00" stroke="#adb8c6" stroke-width="2" opacity="0.6" clip-path="url(#clip27)"></line>
+<line x1="1114.00" y1="1626.00" x2="1114.00" y2="1668.00" stroke="#adb8c6" stroke-width="2" opacity="0.6" clip-path="url(#clip27)"></line>
+<line x1="1114.00" y1="1668.00" x2="1172.00" y2="1668.00" stroke="#ffffff" stroke-width="2" opacity="0.8" clip-path="url(#clip27)"></line>
+<line x1="1172.00" y1="1626.00" x2="1172.00" y2="1668.00" stroke="#ffffff" stroke-width="2" opacity="0.8" clip-path="url(#clip27)"></line>
+<text x="1043.00" y="1652.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#9aa5b3" text-anchor="middle" opacity="1" clip-path="url(#clip27)">up</text>
+<text x="1143.00" y="1652.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#8792a1" text-anchor="middle" opacity="1" clip-path="url(#clip27)">in</text>
+<rect x="972.00" y="1584.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="1774.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="1802.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Raised tactile surfaces</text>
+<text x="54.00" y="1965.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">buttons • sliders • physical depth</text>
+<rect x="54.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="#d9dde5" stroke="#c4cad5" stroke-width="1" opacity="1"></rect>
+<rect x="82.00" y="1844.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="124.00" y="1844.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="166.00" y="1844.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="208.00" y="1844.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="82.00" y="1882.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="124.00" y="1882.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="166.00" y="1882.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="208.00" y="1882.00" width="28.00" height="24.00" rx="7.00" fill="#eef1f6" stroke="#b7beca" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<rect x="110.00" y="1916.00" width="128.00" height="10.00" rx="5.00" fill="#c5ccd6" stroke="#f9fbff" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></rect>
+<circle cx="166.00" cy="1921.00" r="12.00" fill="#eef1f6" stroke="#bbc3cf" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip28)"></circle>
+<line x1="84.00" y1="1850.00" x2="104.00" y2="1850.00" stroke="#fff" stroke-width="1" opacity="0.8" clip-path="url(#clip28)"></line>
+<line x1="126.00" y1="1850.00" x2="146.00" y2="1850.00" stroke="#fff" stroke-width="1" opacity="0.8" clip-path="url(#clip28)"></line>
+<line x1="168.00" y1="1850.00" x2="188.00" y2="1850.00" stroke="#fff" stroke-width="1" opacity="0.8" clip-path="url(#clip28)"></line>
+<rect x="54.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="1774.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="1802.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">3D hyperrealism</text>
+<text x="360.00" y="1965.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">realistic objects • shadows</text>
+<rect x="360.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="#eef1f5" stroke="#dce3ea" stroke-width="1" opacity="1"></rect>
+<ellipse cx="487.00" cy="1921.00" rx="80.00" ry="18.00" fill="#000000" stroke="none" stroke-width="1" opacity="0.18" clip-path="url(#clip29)"></ellipse>
+<circle cx="459.00" cy="1877.00" r="39.00" fill="url(#ceramic)" stroke="#c7cbd0" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip29)"></circle>
+<ellipse cx="445.00" cy="1860.00" rx="12.00" ry="8.00" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.9" clip-path="url(#clip29)"></ellipse>
+<rect x="508.00" y="1852.00" width="52.00" height="52.00" rx="8.00" fill="url(#chrome)" stroke="#8b9198" stroke-width="1" opacity="1" filter="url(#metalShadow)" clip-path="url(#clip29)"></rect>
+<line x1="516.00" y1="1863.00" x2="552.00" y2="1863.00" stroke="#fff" stroke-width="2" opacity="0.8" clip-path="url(#clip29)"></line>
+<rect x="360.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="1774.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="1802.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Low-poly 3D</text>
+<text x="666.00" y="1965.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">faceted gem-like surfaces</text>
+<rect x="666.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="#111827" stroke="#1f2937" stroke-width="1" opacity="1"></rect>
+<polygon points="789.00,1834.00 843.00,1870.00 789.00,1884.00" fill="#22d3ee" stroke="#0f172a" stroke-width="1" opacity="1" clip-path="url(#clip30)"></polygon>
+<polygon points="843.00,1870.00 825.00,1930.00 789.00,1884.00" fill="#3b82f6" stroke="#0f172a" stroke-width="1" opacity="1" clip-path="url(#clip30)"></polygon>
+<polygon points="825.00,1930.00 753.00,1930.00 789.00,1884.00" fill="#8b5cf6" stroke="#0f172a" stroke-width="1" opacity="1" clip-path="url(#clip30)"></polygon>
+<polygon points="753.00,1930.00 735.00,1870.00 789.00,1884.00" fill="#f43f5e" stroke="#0f172a" stroke-width="1" opacity="1" clip-path="url(#clip30)"></polygon>
+<polygon points="735.00,1870.00 789.00,1834.00 789.00,1884.00" fill="#f59e0b" stroke="#0f172a" stroke-width="1" opacity="1" clip-path="url(#clip30)"></polygon>
+<polygon points="789.00,1834.00 843.00,1870.00 825.00,1930.00 753.00,1930.00 735.00,1870.00" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.55" clip-path="url(#clip30)"></polygon>
+<rect x="666.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="1774.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="1802.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Isometric 3D</text>
+<text x="972.00" y="1965.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">angled blocks • diagram depth</text>
+<rect x="972.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="#f1f5f9" stroke="#dbe4ef" stroke-width="1" opacity="1"></rect>
+<polygon points="1015.00,1872.50 1050.00,1890.00 1050.00,1925.00 1015.00,1907.50" fill="#3b82f6" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1085.00,1872.50 1050.00,1890.00 1050.00,1925.00 1085.00,1907.50" fill="#2563eb" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1050.00,1855.00 1085.00,1872.50 1050.00,1890.00 1015.00,1872.50" fill="#93c5fd" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1072.00,1854.00 1100.00,1868.00 1100.00,1896.00 1072.00,1882.00" fill="#f59e0b" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1128.00,1854.00 1100.00,1868.00 1100.00,1896.00 1128.00,1882.00" fill="#d97706" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1100.00,1840.00 1128.00,1854.00 1100.00,1868.00 1072.00,1854.00" fill="#fbbf24" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1106.00,1881.00 1144.00,1900.00 1144.00,1938.00 1106.00,1919.00" fill="#22c55e" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1182.00,1881.00 1144.00,1900.00 1144.00,1938.00 1182.00,1919.00" fill="#16a34a" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<polygon points="1144.00,1862.00 1182.00,1881.00 1144.00,1900.00 1106.00,1881.00" fill="#86efac" stroke="#fff" stroke-width="0.5" opacity="1" clip-path="url(#clip31)"></polygon>
+<line x1="1018.00" y1="1924.00" x2="1178.00" y2="1924.00" stroke="#94a3b8" stroke-width="1.5" opacity="0.45" clip-path="url(#clip31)"></line>
+<rect x="972.00" y="1818.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="2008.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="2036.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Wireframe 3D</text>
+<text x="54.00" y="2199.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">outlined geometry • technical</text>
+<rect x="54.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="#050816" stroke="#101626" stroke-width="1" opacity="1"></rect>
+<polyline points="126.00,2100.00 186.00,2100.00 186.00,2148.00 126.00,2148.00 126.00,2100.00" fill="none" stroke="#67e8f9" stroke-width="2" opacity="0.85" clip-path="url(#clip32)"></polyline>
+<polyline points="164.00,2080.00 224.00,2080.00 224.00,2128.00 164.00,2128.00 164.00,2080.00" fill="none" stroke="#67e8f9" stroke-width="2" opacity="0.65" clip-path="url(#clip32)"></polyline>
+<line x1="126.00" y1="2100.00" x2="164.00" y2="2080.00" stroke="#67e8f9" stroke-width="2" opacity="0.65" clip-path="url(#clip32)"></line>
+<line x1="186.00" y1="2100.00" x2="224.00" y2="2080.00" stroke="#67e8f9" stroke-width="2" opacity="0.65" clip-path="url(#clip32)"></line>
+<line x1="186.00" y1="2148.00" x2="224.00" y2="2128.00" stroke="#67e8f9" stroke-width="2" opacity="0.65" clip-path="url(#clip32)"></line>
+<line x1="126.00" y1="2148.00" x2="164.00" y2="2128.00" stroke="#67e8f9" stroke-width="2" opacity="0.65" clip-path="url(#clip32)"></line>
+<line x1="84.00" y1="2164.00" x2="122.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<line x1="119.00" y1="2164.00" x2="157.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<line x1="154.00" y1="2164.00" x2="192.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<line x1="189.00" y1="2164.00" x2="227.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<line x1="224.00" y1="2164.00" x2="262.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<line x1="259.00" y1="2164.00" x2="297.00" y2="2072.00" stroke="#263048" stroke-width="0.7" opacity="0.45" clip-path="url(#clip32)"></line>
+<rect x="54.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="2008.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="2036.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Blueprint style</text>
+<text x="360.00" y="2199.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">technical drawing on blue</text>
+<rect x="360.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="url(#blueprintGrid)" stroke="#0b4f8f" stroke-width="1" opacity="1"></rect>
+<rect x="402.00" y="2086.00" width="126.00" height="62.00" rx="0.00" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.9" clip-path="url(#clip33)"></rect>
+<circle cx="528.00" cy="2117.00" r="31.00" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.85" clip-path="url(#clip33)"></circle>
+<line x1="402.00" y1="2156.00" x2="568.00" y2="2156.00" stroke="#ffffff" stroke-width="1" opacity="0.8" clip-path="url(#clip33)"></line>
+<line x1="402.00" y1="2086.00" x2="386.00" y2="2072.00" stroke="#ffffff" stroke-width="1" opacity="0.6" clip-path="url(#clip33)"></line>
+<text x="388.00" y="2072.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="start" opacity="0.85" clip-path="url(#clip33)">A-01</text>
+<text x="412.00" y="2114.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#fff" text-anchor="start" opacity="0.75" clip-path="url(#clip33)">PLAN</text>
+<rect x="360.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="2008.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="2036.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Terminal monochrome</text>
+<text x="666.00" y="2199.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">green text • command line</text>
+<rect x="666.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="#050505" stroke="#1f2937" stroke-width="1" opacity="1"></rect>
+<rect x="680.00" y="2066.00" width="218.00" height="100.00" rx="6.00" fill="#080d08" stroke="#1f3b1f" stroke-width="1" opacity="1" clip-path="url(#clip34)"></rect>
+<circle cx="692.00" cy="2078.00" r="3.00" fill="#ff5f57" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip34)"></circle>
+<circle cx="703.00" cy="2078.00" r="3.00" fill="#ffbd2e" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip34)"></circle>
+<circle cx="714.00" cy="2078.00" r="3.00" fill="#28c840" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip34)"></circle>
+<line x1="680.00" y1="2090.00" x2="898.00" y2="2090.00" stroke="#e8e8e8" stroke-width="1" opacity="1" clip-path="url(#clip34)"></line>
+<text x="694.00" y="2104.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4ade80" text-anchor="start" opacity="1" clip-path="url(#clip34)">$ npm run design</text>
+<text x="694.00" y="2120.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4ade80" text-anchor="start" opacity="1" clip-path="url(#clip34)">&gt; compiling ui</text>
+<text x="694.00" y="2136.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4ade80" text-anchor="start" opacity="1" clip-path="url(#clip34)">✓ material tokens</text>
+<text x="694.00" y="2152.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4ade80" text-anchor="start" opacity="1" clip-path="url(#clip34)">▌</text>
+<rect x="686.00" y="2153.00" width="206.00" height="8.00" rx="4.00" fill="#0f1f0f" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip34)"></rect>
+<rect x="666.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="2008.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="2036.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Blueprint grid</text>
+<text x="972.00" y="2199.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">grid-first technical UI</text>
+<rect x="972.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="url(#tinyGrid)" stroke="#0b2341" stroke-width="1" opacity="1"></rect>
+<line x1="972.00" y1="2052.00" x2="972.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="1020.00" y1="2052.00" x2="1020.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="1068.00" y1="2052.00" x2="1068.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="1116.00" y1="2052.00" x2="1116.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="1164.00" y1="2052.00" x2="1164.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="1212.00" y1="2052.00" x2="1212.00" y2="2180.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="972.00" y1="2052.00" x2="1218.00" y2="2052.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="972.00" y1="2084.00" x2="1218.00" y2="2084.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="972.00" y1="2116.00" x2="1218.00" y2="2116.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<line x1="972.00" y1="2148.00" x2="1218.00" y2="2148.00" stroke="#2dd4ff" stroke-width="1" opacity="0.35" clip-path="url(#clip35)"></line>
+<rect x="1000.00" y="2078.00" width="82.00" height="76.00" rx="3.00" fill="none" stroke="#7dd3fc" stroke-width="1.8" opacity="1" clip-path="url(#clip35)"></rect>
+<rect x="1108.00" y="2094.00" width="70.00" height="44.00" rx="3.00" fill="none" stroke="#7dd3fc" stroke-width="1.8" opacity="1" clip-path="url(#clip35)"></rect>
+<text x="1010.00" y="2102.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#dff8ff" text-anchor="start" opacity="1" clip-path="url(#clip35)">GRID</text>
+<line x1="1000.00" y1="2162.00" x2="1184.00" y2="2162.00" stroke="#7dd3fc" stroke-width="1" opacity="0.6" clip-path="url(#clip35)"></line>
+<rect x="972.00" y="2052.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="2242.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="2270.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Dashboard glass cockpit</text>
+<text x="54.00" y="2433.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">HUD gauges • translucent panels</text>
+<rect x="54.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="#06131d" stroke="#10202d" stroke-width="1" opacity="1"></rect>
+<circle cx="126.00" cy="2352.00" r="38.00" fill="none" stroke="#3ff7ff" stroke-width="2" opacity="0.8" filter="url(#glowCyan)" clip-path="url(#clip36)"></circle>
+<line x1="101.75" y1="2338.00" x2="95.69" y2="2334.50" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="109.54" y1="2329.35" x2="105.43" y2="2323.68" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="120.18" y1="2324.61" x2="118.72" y2="2317.76" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="131.82" y1="2324.61" x2="133.28" y2="2317.76" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="142.46" y1="2329.35" x2="146.57" y2="2323.68" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="150.25" y1="2338.00" x2="156.31" y2="2334.50" stroke="#8ffaff" stroke-width="1" opacity="0.8" clip-path="url(#clip36)"></line>
+<line x1="126.00" y1="2352.00" x2="156.00" y2="2336.00" stroke="#ff375f" stroke-width="2.5" opacity="1" clip-path="url(#clip36)"></line>
+<rect x="184.00" y="2312.00" width="86.00" height="32.00" rx="8.00" fill="#0b1f2c" stroke="#3ff7ff" stroke-width="1" opacity="0.65" clip-path="url(#clip36)"></rect>
+<rect x="184.00" y="2358.00" width="86.00" height="32.00" rx="8.00" fill="#0b1f2c" stroke="#3ff7ff" stroke-width="1" opacity="0.65" clip-path="url(#clip36)"></rect>
+<text x="196.00" y="2333.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#bfffff" text-anchor="start" opacity="1" clip-path="url(#clip36)">ALT 340</text>
+<text x="196.00" y="2379.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#bfffff" text-anchor="start" opacity="1" clip-path="url(#clip36)">NAV OK</text>
+<rect x="54.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="2242.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="2270.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Card-heavy SaaS</text>
+<text x="360.00" y="2433.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">rounded dashboards • metric tiles</text>
+<rect x="360.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" opacity="1"></rect>
+<rect x="372.00" y="2298.00" width="222.00" height="104.00" rx="8.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" clip-path="url(#clip37)"></rect>
+<circle cx="384.00" cy="2310.00" r="3.00" fill="#ff5f57" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip37)"></circle>
+<circle cx="395.00" cy="2310.00" r="3.00" fill="#ffbd2e" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip37)"></circle>
+<circle cx="406.00" cy="2310.00" r="3.00" fill="#28c840" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip37)"></circle>
+<line x1="372.00" y1="2322.00" x2="594.00" y2="2322.00" stroke="#e8e8e8" stroke-width="1" opacity="1" clip-path="url(#clip37)"></line>
+<rect x="386.00" y="2334.00" width="58.00" height="44.00" rx="10.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip37)"></rect>
+<rect x="456.00" y="2334.00" width="58.00" height="44.00" rx="10.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip37)"></rect>
+<rect x="526.00" y="2334.00" width="44.00" height="44.00" rx="10.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip37)"></rect>
+<rect x="386.00" y="2384.00" width="184.00" height="8.00" rx="10.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" clip-path="url(#clip37)"></rect>
+<line x1="396.00" y1="2352.00" x2="434.00" y2="2352.00" stroke="#2563eb" stroke-width="3" opacity="1" clip-path="url(#clip37)"></line>
+<line x1="466.00" y1="2352.00" x2="504.00" y2="2352.00" stroke="#10b981" stroke-width="3" opacity="1" clip-path="url(#clip37)"></line>
+<circle cx="548.00" cy="2356.00" r="12.00" fill="#f59e0b" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip37)"></circle>
+<rect x="360.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="2242.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="2270.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Border-only UI</text>
+<text x="666.00" y="2433.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">outlines • no filled surfaces</text>
+<rect x="666.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="#ffffff" stroke="#111827" stroke-width="1" opacity="1"></rect>
+<rect x="690.00" y="2310.00" width="88.00" height="74.00" rx="0.00" fill="none" stroke="#111827" stroke-width="2.2" opacity="1" clip-path="url(#clip38)"></rect>
+<rect x="798.00" y="2310.00" width="86.00" height="30.00" rx="0.00" fill="none" stroke="#111827" stroke-width="2.2" opacity="1" clip-path="url(#clip38)"></rect>
+<rect x="798.00" y="2354.00" width="86.00" height="30.00" rx="0.00" fill="none" stroke="#111827" stroke-width="2.2" opacity="1" clip-path="url(#clip38)"></rect>
+<text x="704.00" y="2344.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="900" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip38)">NO FILL</text>
+<line x1="704.00" y1="2360.00" x2="764.00" y2="2360.00" stroke="#111827" stroke-width="2" opacity="1" clip-path="url(#clip38)"></line>
+<rect x="666.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="2242.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="2270.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Shadowless UI</text>
+<text x="972.00" y="2433.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">flat blocks • clean hierarchy</text>
+<rect x="972.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="#f7f7f2" stroke="#deded8" stroke-width="1" opacity="1"></rect>
+<rect x="994.00" y="2310.00" width="72.00" height="80.00" rx="10.00" fill="#111827" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip39)"></rect>
+<rect x="1080.00" y="2310.00" width="112.00" height="22.00" rx="10.00" fill="#93c5fd" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip39)"></rect>
+<rect x="1080.00" y="2342.00" width="82.00" height="22.00" rx="10.00" fill="#fca5a5" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip39)"></rect>
+<rect x="1080.00" y="2374.00" width="102.00" height="16.00" rx="8.00" fill="#86efac" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip39)"></rect>
+<text x="1011.00" y="2356.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="34" font-weight="900" fill="#fff" text-anchor="start" opacity="1" clip-path="url(#clip39)">0</text>
+<rect x="972.00" y="2286.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="2476.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="2504.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Deep shadow UI</text>
+<text x="54.00" y="2667.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">large cast shadows • drama</text>
+<rect x="54.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" opacity="1"></rect>
+<rect x="94.00" y="2548.00" width="142.00" height="72.00" rx="18.00" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#deepShadow)" clip-path="url(#clip40)"></rect>
+<rect x="116.00" y="2568.00" width="84.00" height="12.00" rx="6.00" fill="#111827" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip40)"></rect>
+<rect x="116.00" y="2590.00" width="104.00" height="8.00" rx="4.00" fill="#9ca3af" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip40)"></rect>
+<circle cx="236.00" cy="2562.00" r="18.00" fill="#6366f1" stroke="none" stroke-width="1" opacity="1" filter="url(#deepShadow)" clip-path="url(#clip40)"></circle>
+<rect x="54.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="2476.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="2504.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Floating panels</text>
+<text x="360.00" y="2667.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">cards at multiple depths</text>
+<rect x="360.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="#eaf1ff" stroke="#d6e0f2" stroke-width="1" opacity="1"></rect>
+<rect x="382.00" y="2564.00" width="80.00" height="50.00" rx="12.00" fill="#fff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#cardShadow)" clip-path="url(#clip41)"></rect>
+<rect x="444.00" y="2544.00" width="88.00" height="54.00" rx="12.00" fill="#fff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#deepShadow)" clip-path="url(#clip41)"></rect>
+<rect x="510.00" y="2578.00" width="74.00" height="48.00" rx="12.00" fill="#fff" stroke="#e5e7eb" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip41)"></rect>
+<line x1="398.00" y1="2630.00" x2="432.00" y2="2630.00" stroke="#94a3b8" stroke-width="1" opacity="0.35" clip-path="url(#clip41)"></line>
+<line x1="460.00" y1="2630.00" x2="494.00" y2="2630.00" stroke="#94a3b8" stroke-width="1" opacity="0.35" clip-path="url(#clip41)"></line>
+<line x1="522.00" y1="2630.00" x2="556.00" y2="2630.00" stroke="#94a3b8" stroke-width="1" opacity="0.35" clip-path="url(#clip41)"></line>
+<rect x="360.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="2476.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="2504.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Layered sheets</text>
+<text x="666.00" y="2667.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">stacked offset pages</text>
+<rect x="666.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="#f3efe7" stroke="#dfd6c8" stroke-width="1" opacity="1"></rect>
+<rect x="708.00" y="2542.00" width="136.00" height="80.00" rx="6.00" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip42)"></rect>
+<line x1="722.00" y1="2568.00" x2="816.00" y2="2568.00" stroke="#64748b" stroke-width="1.4" opacity="0.45" clip-path="url(#clip42)"></line>
+<line x1="722.00" y1="2584.00" x2="796.00" y2="2584.00" stroke="#64748b" stroke-width="1.4" opacity="0.35" clip-path="url(#clip42)"></line>
+<rect x="724.00" y="2552.00" width="136.00" height="80.00" rx="6.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip42)"></rect>
+<line x1="738.00" y1="2578.00" x2="832.00" y2="2578.00" stroke="#64748b" stroke-width="1.4" opacity="0.45" clip-path="url(#clip42)"></line>
+<line x1="738.00" y1="2594.00" x2="812.00" y2="2594.00" stroke="#64748b" stroke-width="1.4" opacity="0.35" clip-path="url(#clip42)"></line>
+<rect x="740.00" y="2562.00" width="136.00" height="80.00" rx="6.00" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip42)"></rect>
+<line x1="754.00" y1="2588.00" x2="848.00" y2="2588.00" stroke="#64748b" stroke-width="1.4" opacity="0.45" clip-path="url(#clip42)"></line>
+<line x1="754.00" y1="2604.00" x2="828.00" y2="2604.00" stroke="#64748b" stroke-width="1.4" opacity="0.35" clip-path="url(#clip42)"></line>
+<rect x="666.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="2476.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="2504.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Tabbed file-folder UI</text>
+<text x="972.00" y="2667.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">folder tabs • tactile nav</text>
+<rect x="972.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="#f4f1e8" stroke="#d8d0c1" stroke-width="1" opacity="1"></rect>
+<rect x="996.00" y="2558.00" width="190.00" height="70.00" rx="8.00" fill="#fffdf8" stroke="#111827" stroke-width="1.5" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip43)"></rect>
+<rect x="1006.00" y="2540.00" width="50.00" height="26.00" rx="8.00" fill="#ffd166" stroke="#111827" stroke-width="1.2" opacity="1" clip-path="url(#clip43)"></rect>
+<rect x="1060.00" y="2540.00" width="50.00" height="26.00" rx="8.00" fill="#a7f3d0" stroke="#111827" stroke-width="1.2" opacity="1" clip-path="url(#clip43)"></rect>
+<rect x="1114.00" y="2540.00" width="50.00" height="26.00" rx="8.00" fill="#bfdbfe" stroke="#111827" stroke-width="1.2" opacity="1" clip-path="url(#clip43)"></rect>
+<line x1="1014.00" y1="2582.00" x2="1164.00" y2="2582.00" stroke="#111827" stroke-width="1.5" opacity="1" clip-path="url(#clip43)"></line>
+<line x1="1014.00" y1="2602.00" x2="1120.00" y2="2602.00" stroke="#111827" stroke-width="1" opacity="1" clip-path="url(#clip43)"></line>
+<text x="1020.00" y="2557.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip43)">tab</text>
+<rect x="972.00" y="2520.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="2710.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="2738.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Command palette UI</text>
+<text x="54.00" y="2901.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">centered search command modal</text>
+<rect x="54.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="#111827" stroke="#1f2937" stroke-width="1" opacity="1"></rect>
+<rect x="84.00" y="2778.00" width="186.00" height="86.00" rx="14.00" fill="#0f172a" stroke="#334155" stroke-width="1.2" opacity="1" filter="url(#deepShadow)" clip-path="url(#clip44)"></rect>
+<rect x="100.00" y="2792.00" width="154.00" height="22.00" rx="11.00" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="1" clip-path="url(#clip44)"></rect>
+<text x="112.00" y="2807.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#cbd5e1" text-anchor="start" opacity="1" clip-path="url(#clip44)">⌘ Search...</text>
+<line x1="106.00" y1="2828.00" x2="148.00" y2="2828.00" stroke="#94a3b8" stroke-width="2" opacity="0.75" clip-path="url(#clip44)"></line>
+<circle cx="238.00" cy="2828.00" r="3.00" fill="#64748b" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip44)"></circle>
+<line x1="106.00" y1="2840.00" x2="148.00" y2="2840.00" stroke="#94a3b8" stroke-width="2" opacity="0.75" clip-path="url(#clip44)"></line>
+<circle cx="238.00" cy="2840.00" r="3.00" fill="#64748b" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip44)"></circle>
+<line x1="106.00" y1="2852.00" x2="148.00" y2="2852.00" stroke="#94a3b8" stroke-width="2" opacity="0.75" clip-path="url(#clip44)"></line>
+<circle cx="238.00" cy="2852.00" r="3.00" fill="#64748b" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip44)"></circle>
+<rect x="54.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="2710.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="2738.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Spreadsheet UI</text>
+<text x="360.00" y="2901.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">cells • headers • selected range</text>
+<rect x="360.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="#f8fafc" stroke="#d8e1ec" stroke-width="1" opacity="1"></rect>
+<rect x="378.00" y="2772.00" width="210.00" height="92.00" rx="4.00" fill="#fff" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></rect>
+<line x1="378.00" y1="2772.00" x2="378.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="413.00" y1="2772.00" x2="413.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="448.00" y1="2772.00" x2="448.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="483.00" y1="2772.00" x2="483.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="518.00" y1="2772.00" x2="518.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="553.00" y1="2772.00" x2="553.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="588.00" y1="2772.00" x2="588.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2772.00" x2="588.00" y2="2772.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2790.40" x2="588.00" y2="2790.40" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2808.80" x2="588.00" y2="2808.80" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2827.20" x2="588.00" y2="2827.20" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2845.60" x2="588.00" y2="2845.60" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<line x1="378.00" y1="2864.00" x2="588.00" y2="2864.00" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip45)"></line>
+<rect x="378.00" y="2772.00" width="210.00" height="18.40" rx="0.00" fill="#e2e8f0" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip45)"></rect>
+<rect x="448.00" y="2808.80" width="35.00" height="18.40" rx="0.00" fill="#bfdbfe" stroke="#2563eb" stroke-width="2" opacity="0.85" clip-path="url(#clip45)"></rect>
+<text x="388.00" y="2786.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="start" opacity="1" clip-path="url(#clip45)">A</text>
+<text x="423.00" y="2786.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="start" opacity="1" clip-path="url(#clip45)">B</text>
+<rect x="360.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="2710.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="2738.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Code editor UI</text>
+<text x="666.00" y="2901.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">dark editor • syntax color</text>
+<rect x="666.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="#0d1117" stroke="#30363d" stroke-width="1" opacity="1"></rect>
+<rect x="680.00" y="2768.00" width="218.00" height="100.00" rx="6.00" fill="#0d1117" stroke="#30363d" stroke-width="1" opacity="1" clip-path="url(#clip46)"></rect>
+<circle cx="692.00" cy="2780.00" r="3.00" fill="#ff5f57" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip46)"></circle>
+<circle cx="703.00" cy="2780.00" r="3.00" fill="#ffbd2e" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip46)"></circle>
+<circle cx="714.00" cy="2780.00" r="3.00" fill="#28c840" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip46)"></circle>
+<line x1="680.00" y1="2792.00" x2="898.00" y2="2792.00" stroke="#e8e8e8" stroke-width="1" opacity="1" clip-path="url(#clip46)"></line>
+<text x="694.00" y="2806.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="400" fill="#6e7681" text-anchor="start" opacity="1" clip-path="url(#clip46)">01</text>
+<text x="718.00" y="2806.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#ff7b72" text-anchor="start" opacity="1" clip-path="url(#clip46)">const </text>
+<text x="770.00" y="2806.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#d2a8ff" text-anchor="start" opacity="1" clip-path="url(#clip46)">card</text>
+<text x="694.00" y="2821.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="400" fill="#6e7681" text-anchor="start" opacity="1" clip-path="url(#clip46)">02</text>
+<text x="718.00" y="2821.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#79c0ff" text-anchor="start" opacity="1" clip-path="url(#clip46)">  color:</text>
+<text x="770.00" y="2821.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#a5d6ff" text-anchor="start" opacity="1" clip-path="url(#clip46)"> &#34;blue&#34;</text>
+<text x="694.00" y="2836.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="400" fill="#6e7681" text-anchor="start" opacity="1" clip-path="url(#clip46)">03</text>
+<text x="718.00" y="2836.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#79c0ff" text-anchor="start" opacity="1" clip-path="url(#clip46)">  shadow:</text>
+<text x="770.00" y="2836.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#7ee787" text-anchor="start" opacity="1" clip-path="url(#clip46)"> true</text>
+<text x="694.00" y="2851.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="400" fill="#6e7681" text-anchor="start" opacity="1" clip-path="url(#clip46)">04</text>
+<text x="718.00" y="2851.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#ff7b72" text-anchor="start" opacity="1" clip-path="url(#clip46)">}</text>
+<text x="770.00" y="2851.00" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#fff" text-anchor="start" opacity="1" clip-path="url(#clip46)"></text>
+<rect x="666.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="954.00" y="2710.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="972.00" y="2738.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Map-based UI</text>
+<text x="972.00" y="2901.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">geography as primary canvas</text>
+<rect x="972.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="#e8f3e9" stroke="#c7dac9" stroke-width="1" opacity="1"></rect>
+<path d="M977,2846 C1020,2834 1028,2790 1076,2808 C1118,2824 1136,2778 1202,2790 L1218,2882 L972,2882 Z" fill="#c9e7c9" stroke="#94c79b" stroke-width="1" opacity="1" clip-path="url(#clip47)"></path>
+<path d="M984,2826 C1028,2804 1064,2846 1104,2820 S1162,2782 1202,2828" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.75" clip-path="url(#clip47)"></path>
+<circle cx="1122.00" cy="2812.00" r="9.00" fill="#ef4444" stroke="#fff" stroke-width="3" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip47)"></circle>
+<rect x="1000.00" y="2774.00" width="72.00" height="26.00" rx="8.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip47)"></rect>
+<text x="1014.00" y="2792.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#334155" text-anchor="start" opacity="1" clip-path="url(#clip47)">MAP</text>
+<rect x="972.00" y="2754.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="36.00" y="2944.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="54.00" y="2972.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Timeline-based UI</text>
+<text x="54.00" y="3135.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">milestones • chronological flow</text>
+<rect x="54.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="#fafafa" stroke="#e5e7eb" stroke-width="1" opacity="1"></rect>
+<line x1="102.00" y1="3016.00" x2="102.00" y2="3092.00" stroke="#111827" stroke-width="2" opacity="1" clip-path="url(#clip48)"></line>
+<circle cx="102.00" cy="3020.00" r="7.00" fill="#111827" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip48)"></circle>
+<rect x="124.00" y="3008.00" width="116.00" height="24.00" rx="8.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip48)"></rect>
+<text x="138.00" y="3024.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip48)">Launch</text>
+<circle cx="102.00" cy="3050.00" r="7.00" fill="#111827" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip48)"></circle>
+<rect x="124.00" y="3038.00" width="116.00" height="24.00" rx="8.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip48)"></rect>
+<text x="138.00" y="3054.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip48)">Beta</text>
+<circle cx="102.00" cy="3080.00" r="7.00" fill="#111827" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip48)"></circle>
+<rect x="124.00" y="3068.00" width="116.00" height="24.00" rx="8.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip48)"></rect>
+<text x="138.00" y="3084.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#111827" text-anchor="start" opacity="1" clip-path="url(#clip48)">Scale</text>
+<text x="251.00" y="3028.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="900" fill="#9ca3af" text-anchor="start" opacity="1" clip-path="url(#clip48)">Q1</text>
+<rect x="54.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="342.00" y="2944.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="360.00" y="2972.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Kanban UI</text>
+<text x="360.00" y="3135.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">columns • movable cards</text>
+<rect x="360.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="#f1f5f9" stroke="#d8e0ea" stroke-width="1" opacity="1"></rect>
+<rect x="378.00" y="3006.00" width="62.00" height="92.00" rx="8.00" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip49)"></rect>
+<text x="386.00" y="3023.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="start" opacity="1" clip-path="url(#clip49)">To do</text>
+<rect x="386.00" y="3032.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="392.00" y1="3042.00" x2="422.00" y2="3042.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="386.00" y="3054.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="392.00" y1="3064.00" x2="422.00" y2="3064.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="450.00" y="3006.00" width="62.00" height="92.00" rx="8.00" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip49)"></rect>
+<text x="458.00" y="3023.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="start" opacity="1" clip-path="url(#clip49)">Doing</text>
+<rect x="458.00" y="3032.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="464.00" y1="3042.00" x2="494.00" y2="3042.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="458.00" y="3054.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="464.00" y1="3064.00" x2="494.00" y2="3064.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="522.00" y="3006.00" width="62.00" height="92.00" rx="8.00" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip49)"></rect>
+<text x="530.00" y="3023.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#334155" text-anchor="start" opacity="1" clip-path="url(#clip49)">Done</text>
+<rect x="530.00" y="3032.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="536.00" y1="3042.00" x2="566.00" y2="3042.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="530.00" y="3054.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="536.00" y1="3064.00" x2="566.00" y2="3064.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="530.00" y="3076.00" width="46.00" height="16.00" rx="5.00" fill="#ffffff" stroke="#d1d5db" stroke-width="1" opacity="1" filter="url(#tinyShadow)" clip-path="url(#clip49)"></rect>
+<line x1="536.00" y1="3086.00" x2="566.00" y2="3086.00" stroke="#94a3b8" stroke-width="1.5" opacity="1" clip-path="url(#clip49)"></line>
+<rect x="360.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+<rect x="648.00" y="2944.00" width="282.00" height="210.00" rx="18.00" fill="#fffdfa" stroke="#ded8cd" stroke-width="1" opacity="1" filter="url(#softShadow)"></rect>
+<text x="666.00" y="2972.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#171717" text-anchor="start" opacity="1">Chat-first UI</text>
+<text x="666.00" y="3135.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" fill="#666" text-anchor="start" opacity="1">conversation as main interface</text>
+<rect x="666.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="#f8fafc" stroke="#dbe3ee" stroke-width="1" opacity="1"></rect>
+<rect x="694.00" y="3012.00" width="110.00" height="26.00" rx="13.00" fill="#e5e7eb" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip50)"></rect>
+<rect x="764.00" y="3046.00" width="120.00" height="28.00" rx="14.00" fill="#2563eb" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip50)"></rect>
+<rect x="694.00" y="3080.00" width="84.00" height="22.00" rx="11.00" fill="#e5e7eb" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip50)"></rect>
+<text x="710.00" y="3030.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="500" fill="#334155" text-anchor="start" opacity="1" clip-path="url(#clip50)">Need a style?</text>
+<text x="782.00" y="3064.00" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" font-weight="600" fill="#ffffff" text-anchor="start" opacity="1" clip-path="url(#clip50)">Try glass UI</text>
+<rect x="692.00" y="3092.00" width="194.00" height="16.00" rx="8.00" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" opacity="1" clip-path="url(#clip50)"></rect>
+<circle cx="872.00" cy="3100.00" r="5.00" fill="#2563eb" stroke="none" stroke-width="1" opacity="1" clip-path="url(#clip50)"></circle>
+<rect x="666.00" y="2988.00" width="246.00" height="128.00" rx="10.00" fill="none" stroke="#ececec" stroke-width="1" opacity="1"></rect>
+</svg>

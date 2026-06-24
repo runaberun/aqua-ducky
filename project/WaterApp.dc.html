@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes wv1{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes wv2{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes dropfall{0%{transform:translateY(0) rotate(45deg) scale(.65);opacity:0}16%{opacity:1}80%{transform:translateY(var(--fall,150px)) rotate(45deg) scale(1);opacity:1}100%{transform:translateY(var(--fall,150px)) rotate(45deg) scaleX(1.7) scaleY(.35);opacity:0}}
+    @keyframes splashring{0%{transform:translate(-50%,0) scale(.2);opacity:0}25%{opacity:.85}100%{transform:translate(-50%,0) scale(1.8);opacity:0}}
+    @keyframes spa{0%{transform:translate(0,0) scale(1);opacity:.95}100%{transform:translate(-18px,-22px) scale(.25);opacity:0}}
+    @keyframes spb{0%{transform:translate(0,0) scale(1);opacity:.95}100%{transform:translate(0,-30px) scale(.25);opacity:0}}
+    @keyframes spc{0%{transform:translate(0,0) scale(1);opacity:.95}100%{transform:translate(18px,-22px) scale(.25);opacity:0}}
+    @keyframes bub{0%{transform:translateY(8px) scale(.5);opacity:0}30%{opacity:.5}100%{transform:translateY(-60px) scale(1);opacity:0}}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes spark{0%{transform:scale(0) rotate(0deg);opacity:0}35%{opacity:1}100%{transform:scale(1.35) rotate(40deg);opacity:0}}
+    @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes sheetup{from{transform:translateY(100%)}to{transform:translateY(0)}}
+    @keyframes glowpulse{0%,100%{opacity:.45}50%{opacity:.85}}
+    @keyframes dpunch{0%{transform:scale(1)}30%{transform:scale(1.34)}62%{transform:scale(.9)}100%{transform:scale(1)}}
+    @keyframes dburstring{0%{transform:translate(-50%,-50%) scale(.5);opacity:.85}100%{transform:translate(-50%,-50%) scale(2.3);opacity:0}}
+    @keyframes goalflash{0%{opacity:0}20%{opacity:1}100%{opacity:0}}
+    @keyframes cburst{0%{transform:translateY(0) scale(1);opacity:1}45%{transform:translateY(92px) scale(.94);opacity:1}100%{transform:translateY(166px) scaleX(1.45) scaleY(.4);opacity:0}}
+    @keyframes cpop{0%{transform:scale(0);opacity:0}62%{transform:scale(1.12);opacity:1}100%{transform:scale(1);opacity:1}}
+    *::-webkit-scrollbar{width:0;height:0}
+  </style>
+</helmet>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+  <div data-screen-label="Water app" style="position:relative;height:100%;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(125% 78% at 50% -8%, #16447f 0%, #0d2c66 32%, #081d47 60%, #050f2b 100%);font-family:-apple-system, system-ui, 'Segoe UI', sans-serif;color:#eaf2ff">
+    <div style="position:absolute;top:-70px;left:-50px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(74,165,255,0.34),transparent 70%);filter:blur(6px);pointer-events:none;animation:glowpulse 7s ease-in-out infinite"></div>
+    <div style="position:absolute;top:140px;right:-80px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(43,84,224,0.3),transparent 70%);filter:blur(6px);pointer-events:none"></div>
+
+    <div style="position:relative;flex:1;overflow-y:auto;overflow-x:hidden;padding-top:56px;z-index:1">
+
+      <!-- ============ TODAY ============ -->
+      <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+      <div data-screen-label="Today">
+        <!-- common topbar -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:0 20px 4px">
+          <div style="font-size:12.5px;color:rgba(180,210,255,0.62);letter-spacing:.01em">{{ dateText }}</div>
+          <div style="display:flex;gap:9px;align-items:center">
+            <div style="display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:999px;background:rgba(240,198,106,0.15);border:1px solid rgba(240,198,106,0.42);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22)">
+              <svg width="13" height="15" viewBox="0 0 24 24"><path fill="#f3d28a" d="M13 2c0 4-5 5-5 10a5 5 0 0 0 10 0c0-2-1-3-1-3 0 1.5-1 2-1.5 2 .5-3-1.5-7-1.5-9Z"></path></svg>
+              <span style="font-size:13px;font-weight:600;color:#f3d28a;font-variant-numeric:tabular-nums">{{ streakText }}</span>
+            </div>
+            <button onClick="{{ openGoal }}" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.28);cursor:pointer;display:flex;align-items:center;justify-content:center" style-active="transform:scale(.92)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cfe2ff" stroke-width="1.7"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ---- variant A : Chalice (smooth) ---- -->
+        <sc-if value="{{ isVarA }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;align-items:center;padding:6px 20px 0">
+          <div style="text-align:center">
+            <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(170,205,255,0.6);margin-bottom:3px">{{ greeting }}</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:7px">
+              <span style="font-family:Didot,'Bodoni 72','Bodoni MT','Playfair Display',Georgia,serif;font-size:76px;line-height:.9;font-weight:500;color:#fff;letter-spacing:-.005em;font-variant-numeric:tabular-nums">{{ consumedText }}</span>
+              <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:23px;color:rgba(200,224,255,0.7)">/ {{ goalText }} oz</span>
+            </div>
+            <div style="font-size:13px;color:rgba(185,214,255,0.82);margin-top:3px">{{ dropletNote }}</div>
+          </div>
+
+          <div style="position:relative;width:340px;height:344px;display:flex;align-items:center;justify-content:center;margin-top:26px;order:3">
+            <svg width="340" height="340" viewBox="0 0 340 340" style="position:absolute;transform:rotate(-90deg)">
+              <circle cx="170" cy="170" r="158" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="9"></circle>
+              <circle cx="170" cy="170" r="158" fill="none" stroke="{{ ringColor }}" stroke-width="9" stroke-linecap="round" stroke-dasharray="{{ ringDash }}" stroke-dashoffset="{{ ringOffset }}" style="transition:stroke-dashoffset .75s cubic-bezier(.4,1.1,.35,1), stroke .5s"></circle>
+            </svg>
+            <div style="position:absolute;left:{{ ringPctX }};top:{{ ringPctY }};transform:translate(-50%,-50%);display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:rgba(6,30,24,0.82);border:1px solid {{ ringColor }};box-shadow:0 5px 14px rgba(5,20,40,0.5);pointer-events:none;z-index:4;transition:left .75s cubic-bezier(.4,1.1,.35,1), top .75s cubic-bezier(.4,1.1,.35,1)">
+              <span style="width:6px;height:6px;border-radius:50%;background:{{ ringColor }}"></span>
+              <span style="font-size:12.5px;font-weight:600;color:#eafff6;font-variant-numeric:tabular-nums;letter-spacing:.01em">{{ pctText }}</span>
+            </div>
+            <!-- glass -->
+            <div style="position:relative;width:148px;height:226px;border-radius:18px 18px 36px 36px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.24);box-shadow:inset 0 2px 7px rgba(255,255,255,0.28), inset 0 -14px 34px rgba(8,36,90,0.45), 0 22px 52px rgba(5,20,60,0.5)">
+              <div style="position:absolute;left:0;right:0;bottom:0;height:{{ fillPx }};background:linear-gradient(180deg,#7cc6ff 0%,#3f9bef 38%,#2768d8 80%,#1c4fc0 100%);transition:height .75s cubic-bezier(.45,.9,.3,1)">
+                <svg viewBox="0 0 240 24" preserveAspectRatio="none" style="position:absolute;top:-11px;left:0;width:200%;height:18px;animation:wv1 6s linear infinite"><path d="M0 14 Q30 4 60 14 T120 14 T180 14 T240 14 V24 H0Z" fill="#8fcfff"></path></svg>
+                <svg viewBox="0 0 240 24" preserveAspectRatio="none" style="position:absolute;top:-8px;left:0;width:200%;height:16px;opacity:.55;animation:wv2 9s linear infinite reverse"><path d="M0 14 Q30 6 60 14 T120 14 T180 14 T240 14 V24 H0Z" fill="#bfe4ff"></path></svg>
+                <span style="position:absolute;left:24%;bottom:16px;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);animation:bub 4.2s ease-in infinite"></span>
+                <span style="position:absolute;left:60%;bottom:8px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.5);animation:bub 3.4s ease-in .8s infinite"></span>
+                <span style="position:absolute;left:44%;bottom:20px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.45);animation:bub 5s ease-in 1.6s infinite"></span>
+              </div>
+              <div style="position:absolute;left:0;right:0;bottom:{{ fillPx }};height:0;z-index:3;pointer-events:none">
+                <sc-for list="{{ splashes }}" as="sp" hint-placeholder-count="0">
+                  <div style="position:absolute;left:50%;top:0">
+                    <div style="position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,0.85);animation:splashring .6s ease-out forwards"></div>
+                    <span style="position:absolute;left:-2px;top:-2px;width:5px;height:5px;border-radius:50%;background:#dff0ff;animation:spa .55s ease-out forwards"></span>
+                    <span style="position:absolute;left:-2px;top:-2px;width:5px;height:5px;border-radius:50%;background:#dff0ff;animation:spb .58s ease-out forwards"></span>
+                    <span style="position:absolute;left:-2px;top:-2px;width:5px;height:5px;border-radius:50%;background:#dff0ff;animation:spc .55s ease-out forwards"></span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="position:absolute;inset:0;--fall:150px;pointer-events:none">
+                <sc-for list="{{ fallingDrops }}" as="fd" hint-placeholder-count="0">
+                  <span style="position:absolute;left:{{ fd.leftPct }}%;top:-4px;width:18px;height:18px;border-radius:0 50% 50% 50%;background:linear-gradient(135deg,#cfe8ff,#3f9bef);box-shadow:0 4px 10px rgba(30,90,190,0.5);animation:dropfall .52s cubic-bezier(.5,.05,.7,.6) forwards"></span>
+                </sc-for>
+              </div>
+            </div>
+            <sc-if value="{{ celebrate }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+                <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(240,198,106,0.3),transparent 62%);animation:goalflash 2.6s ease-out forwards"></div>
+                <span style="position:absolute;left:30px;top:50px;font-size:18px;animation:spark 1.6s ease-out forwards;color:#f3d28a">✦</span>
+                <span style="position:absolute;right:36px;top:80px;font-size:13px;animation:spark 1.6s ease-out .25s forwards;color:#f3d28a">✦</span>
+                <span style="position:absolute;left:54px;bottom:70px;font-size:14px;animation:spark 1.6s ease-out .5s forwards;color:#f3d28a">✦</span>
+                <span style="position:absolute;right:50px;bottom:96px;font-size:18px;animation:spark 1.6s ease-out .15s forwards;color:#f3d28a">✦</span>
+              </div>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ celebrate }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:22px;color:#f3d28a;margin-top:2px;order:4;animation:pop .5s ease both">Goal reached</div>
+          </sc-if>
+
+          <div style="width:100%;max-width:300px;height:1px;background:rgba(255,255,255,0.12);margin-top:26px;order:1"></div>
+          <div style="display:flex;justify-content:center;gap:20px;margin-top:22px;order:1">
+            <button onClick="{{ aSip }}" style="position:relative;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center" style-active="transform:translateY(2px) scale(.93)">
+              <span style="position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;animation:{{ aSipPunch }}"><span style="position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:50%;border:2px solid rgba(143,207,255,0.9);transform:translate(-50%,-50%) scale(.5);opacity:0;pointer-events:none;animation:{{ aSipRing }}"></span><span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9), rgba(91,182,255,0.6) 46%, rgba(31,79,192,0.7));border:1px solid rgba(255,255,255,0.45);box-shadow:inset 0 2px 5px rgba(255,255,255,0.6), 0 7px 15px rgba(20,80,180,0.45)"></span><span style="position:relative;font-family:Didot,'Playfair Display',Georgia,serif;font-size:18px;color:#08245e;font-weight:600">2</span></span>
+              <span style="font-size:10.5px;letter-spacing:.04em;color:rgba(200,224,255,0.72);margin-top:8px">Sip · 2 oz</span>
+            </button>
+            <button onClick="{{ aGlass }}" style="position:relative;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center" style-active="transform:translateY(2px) scale(.93)">
+              <span style="position:relative;width:56px;height:56px;display:flex;align-items:center;justify-content:center;animation:{{ aGlassPunch }}"><span style="position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:50%;border:2px solid rgba(143,207,255,0.9);transform:translate(-50%,-50%) scale(.5);opacity:0;pointer-events:none;animation:{{ aGlassRing }}"></span><span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9), rgba(91,182,255,0.6) 46%, rgba(31,79,192,0.72));border:1px solid rgba(255,255,255,0.45);box-shadow:inset 0 2px 6px rgba(255,255,255,0.6), 0 9px 18px rgba(20,80,180,0.5)"></span><span style="position:relative;font-family:Didot,'Playfair Display',Georgia,serif;font-size:23px;color:#08245e;font-weight:600">8</span></span>
+              <span style="font-size:10.5px;letter-spacing:.04em;color:rgba(200,224,255,0.72);margin-top:8px">Glass · 8 oz</span>
+            </button>
+            <button onClick="{{ aBottle }}" style="position:relative;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center" style-active="transform:translateY(2px) scale(.93)">
+              <span style="position:relative;width:68px;height:68px;display:flex;align-items:center;justify-content:center;animation:{{ aBottlePunch }}"><span style="position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:50%;border:2px solid rgba(143,207,255,0.9);transform:translate(-50%,-50%) scale(.5);opacity:0;pointer-events:none;animation:{{ aBottleRing }}"></span><span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.92), rgba(91,182,255,0.6) 46%, rgba(31,79,192,0.74));border:1px solid rgba(255,255,255,0.48);box-shadow:inset 0 3px 7px rgba(255,255,255,0.6), 0 11px 22px rgba(20,80,180,0.5)"></span><span style="position:relative;font-family:Didot,'Playfair Display',Georgia,serif;font-size:27px;color:#08245e;font-weight:600">16</span></span>
+              <span style="font-size:10.5px;letter-spacing:.04em;color:rgba(200,224,255,0.72);margin-top:8px">Bottle · 16 oz</span>
+            </button>
+          </div>
+          <div style="font-size:11.5px;color:rgba(170,205,255,0.5);margin-top:10px;order:2">Tap a drop to pour it in</div>
+
+          <div style="order:5;width:100%;max-width:300px;margin-top:24px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:9px">
+              <span style="font-size:13px;color:{{ paceColor }};letter-spacing:.01em">{{ paceLabel }}</span>
+              <span style="font-size:11px;color:rgba(170,205,255,0.48);font-variant-numeric:tabular-nums">{{ nowTimeText }}</span>
+            </div>
+            <div style="position:relative;height:5px;border-radius:999px;background:rgba(255,255,255,0.10)">
+              <div style="position:absolute;left:0;top:0;bottom:0;width:{{ fillPct }};background:linear-gradient(90deg,#2fd39a,#34c9c4);border-radius:999px;transition:width .7s cubic-bezier(.45,.9,.3,1)"></div>
+              <div style="position:absolute;left:{{ idealPct }};top:-4px;width:2px;height:13px;border-radius:2px;background:rgba(234,242,255,0.85);transform:translateX(-1px)"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:7px">
+              <span style="font-size:10.5px;color:rgba(170,205,255,0.45)">Where you are</span>
+              <span style="font-size:10.5px;color:rgba(170,205,255,0.45)">Ideal by now</span>
+            </div>
+          </div>
+
+          <div style="order:6;width:100%;max-width:300px;margin-top:22px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px">
+              <span style="font-size:13px;color:rgba(200,224,255,0.82);font-weight:600">Weekly consistency</span>
+              <span style="font-size:11.5px;color:rgba(170,205,255,0.6);font-variant-numeric:tabular-nums">{{ weekMetText }}</span>
+            </div>
+            <div style="display:flex;gap:9px">
+              <sc-for list="{{ pace7 }}" as="d" hint-placeholder-count="7">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+                  <div style="width:100%;height:46px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.05);border-radius:7px;overflow:hidden">
+                    <div style="width:100%;height:{{ d.h }};background:{{ d.bg }};border-radius:7px;transition:height .6s ease"></div>
+                  </div>
+                  <span style="font-size:10px;color:{{ d.labelColor }}">{{ d.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="order:7;height:14px"></div>
+        </div>
+        </sc-if>
+
+        <!-- ---- variant B : Editorial ---- -->
+        <sc-if value="{{ isVarB }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:4px 0 0">
+          <div style="padding:8px 24px 0">
+            <div style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(170,205,255,0.6)">Today's intake — {{ pctText }}</div>
+            <div style="display:flex;align-items:flex-end;gap:9px;margin-top:2px">
+              <span style="font-family:Didot,'Bodoni 72','Bodoni MT','Playfair Display',Georgia,serif;font-size:96px;line-height:.82;font-weight:500;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums">{{ consumedText }}</span>
+              <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:21px;color:rgba(200,224,255,0.68);padding-bottom:10px">/ {{ goalText }} oz</span>
+            </div>
+            <div style="font-size:13px;color:rgba(185,214,255,0.8);margin-top:4px">{{ dropletNote }}</div>
+            <div style="height:5px;border-radius:999px;background:rgba(255,255,255,0.12);overflow:hidden;margin-top:16px">
+              <div style="height:100%;width:{{ fillPct }};background:linear-gradient(90deg,#5bb6ff,#2768d8);border-radius:999px;transition:width .7s cubic-bezier(.45,.9,.3,1)"></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:20px;padding:22px 24px 0;align-items:flex-end">
+            <div style="flex:1;display:flex;flex-direction:column;gap:11px">
+              <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(170,205,255,0.55);margin-bottom:1px">Add water</div>
+              <button onClick="{{ dropSip }}" style="display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);cursor:pointer;color:#eaf2ff" style-active="transform:scale(.97)">
+                <span style="width:14px;height:14px;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:linear-gradient(135deg,#cfe8ff,#3f9bef);flex:none"></span>
+                <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:21px;line-height:1">2</span>
+                <span style="font-size:12px;color:rgba(190,216,255,0.66)">oz · Sip</span>
+              </button>
+              <button onClick="{{ dropGlass }}" style="display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);cursor:pointer;color:#eaf2ff" style-active="transform:scale(.97)">
+                <span style="width:17px;height:17px;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:linear-gradient(135deg,#cfe8ff,#3f9bef);flex:none"></span>
+                <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:21px;line-height:1">8</span>
+                <span style="font-size:12px;color:rgba(190,216,255,0.66)">oz · Glass</span>
+              </button>
+              <button onClick="{{ dropBottle }}" style="display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);cursor:pointer;color:#eaf2ff" style-active="transform:scale(.97)">
+                <span style="width:20px;height:20px;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:linear-gradient(135deg,#cfe8ff,#3f9bef);flex:none"></span>
+                <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:21px;line-height:1">16</span>
+                <span style="font-size:12px;color:rgba(190,216,255,0.66)">oz · Bottle</span>
+              </button>
+            </div>
+            <div style="position:relative;width:82px;height:288px;border-radius:14px 14px 22px 22px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.09),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.22);box-shadow:inset 0 2px 7px rgba(255,255,255,0.24), inset 0 -12px 30px rgba(8,36,90,0.4), 0 18px 44px rgba(5,20,60,0.45);flex:none">
+              <div style="position:absolute;left:0;right:0;bottom:0;height:{{ fillPx }};background:linear-gradient(180deg,#7cc6ff 0%,#3f9bef 40%,#2768d8 100%);transition:height .75s cubic-bezier(.45,.9,.3,1)">
+                <svg viewBox="0 0 240 24" preserveAspectRatio="none" style="position:absolute;top:-10px;left:0;width:200%;height:16px;animation:wv1 5.5s linear infinite"><path d="M0 14 Q30 4 60 14 T120 14 T180 14 T240 14 V24 H0Z" fill="#9ad3ff"></path></svg>
+                <span style="position:absolute;left:30%;bottom:12px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.55);animation:bub 4s ease-in infinite"></span>
+                <span style="position:absolute;left:62%;bottom:6px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.5);animation:bub 3.6s ease-in 1s infinite"></span>
+              </div>
+              <div style="position:absolute;left:0;right:0;bottom:{{ fillPx }};height:0;z-index:3;pointer-events:none">
+                <sc-for list="{{ splashes }}" as="sp" hint-placeholder-count="0">
+                  <div style="position:absolute;left:50%;top:0"><div style="position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,0.85);animation:splashring .6s ease-out forwards"></div></div>
+                </sc-for>
+              </div>
+              <div style="position:absolute;top:18px;bottom:14px;right:8px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none">
+                <span style="width:9px;height:1px;background:rgba(255,255,255,0.3);align-self:flex-end"></span>
+                <span style="width:14px;height:1px;background:rgba(255,255,255,0.4);align-self:flex-end"></span>
+                <span style="width:9px;height:1px;background:rgba(255,255,255,0.3);align-self:flex-end"></span>
+                <span style="width:14px;height:1px;background:rgba(255,255,255,0.4);align-self:flex-end"></span>
+                <span style="width:9px;height:1px;background:rgba(255,255,255,0.3);align-self:flex-end"></span>
+              </div>
+              <div style="position:absolute;top:6px;left:9px;width:11px;height:78%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0));pointer-events:none"></div>
+              <div style="position:absolute;inset:0;--fall:210px;pointer-events:none">
+                <sc-for list="{{ fallingDrops }}" as="fd" hint-placeholder-count="0">
+                  <span style="position:absolute;left:{{ fd.leftPct }}%;top:-4px;width:15px;height:15px;border-radius:0 50% 50% 50%;background:linear-gradient(135deg,#cfe8ff,#3f9bef);box-shadow:0 4px 9px rgba(30,90,190,0.5);animation:dropfall .52s cubic-bezier(.5,.05,.7,.6) forwards"></span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <sc-if value="{{ celebrate }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:20px;color:#f3d28a;margin:18px 24px 0;animation:pop .5s ease both">Goal reached — beautiful.</div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <!-- ---- variant C : Playful ---- -->
+        <sc-if value="{{ isVarC }}" hint-placeholder-val="{{ false }}">
+        <div style="position:relative;display:flex;flex-direction:column;align-items:center;padding:4px 20px 0;min-height:560px">
+          <div style="text-align:center">
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:6px">
+              <span style="font-family:Didot,'Bodoni 72','Bodoni MT','Playfair Display',Georgia,serif;font-size:64px;line-height:.9;font-weight:500;color:#fff;font-variant-numeric:tabular-nums">{{ pctText }}</span>
+            </div>
+            <div style="font-size:13px;color:rgba(185,214,255,0.82);margin-top:1px">{{ consumedText }} of {{ goalText }} oz · {{ dropletNote }}</div>
+          </div>
+
+          <div style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:18px;height:96px">
+            <button onClick="{{ cSip }}" style="position:relative;width:48px;height:48px;border:none;background:none;cursor:pointer;animation:{{ cSipAnim }}">
+              <span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 34% 30%, rgba(255,255,255,0.92), rgba(124,198,255,0.55) 46%, rgba(39,104,216,0.66));border:1px solid rgba(255,255,255,0.5);box-shadow:inset 0 2px 6px rgba(255,255,255,0.6), 0 8px 18px rgba(20,70,170,0.42)"></span>
+              <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Didot,'Playfair Display',Georgia,serif;font-size:18px;color:#0a2a63;font-weight:600">2</span>
+            </button>
+            <button onClick="{{ cBottle }}" style="position:relative;width:86px;height:86px;border:none;background:none;cursor:pointer;animation:{{ cBottleAnim }}">
+              <span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 34% 30%, rgba(255,255,255,0.92), rgba(124,198,255,0.55) 46%, rgba(39,104,216,0.68));border:1px solid rgba(255,255,255,0.52);box-shadow:inset 0 3px 8px rgba(255,255,255,0.6), 0 12px 24px rgba(20,70,170,0.46)"></span>
+              <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Didot,'Playfair Display',Georgia,serif;font-size:30px;color:#0a2a63;font-weight:600">16</span>
+            </button>
+            <button onClick="{{ cGlass }}" style="position:relative;width:62px;height:62px;border:none;background:none;cursor:pointer;animation:{{ cGlassAnim }}">
+              <span style="position:absolute;inset:0;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:radial-gradient(circle at 34% 30%, rgba(255,255,255,0.92), rgba(124,198,255,0.55) 46%, rgba(39,104,216,0.67));border:1px solid rgba(255,255,255,0.5);box-shadow:inset 0 2px 7px rgba(255,255,255,0.6), 0 10px 20px rgba(20,70,170,0.44)"></span>
+              <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Didot,'Playfair Display',Georgia,serif;font-size:23px;color:#0a2a63;font-weight:600">8</span>
+            </button>
+          </div>
+          <div style="font-size:11.5px;color:rgba(170,205,255,0.55);margin-top:8px">Pop a bubble to fill the bucket</div>
+
+          <div style="position:relative;width:236px;height:158px;margin-top:18px;border-radius:16px 16px 30px 30px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.24);box-shadow:inset 0 2px 7px rgba(255,255,255,0.28), inset 0 -14px 32px rgba(8,36,90,0.45), 0 20px 48px rgba(5,20,60,0.5)">
+            <div style="position:absolute;left:0;right:0;bottom:0;height:{{ fillPx }};background:linear-gradient(180deg,#7cc6ff 0%,#3f9bef 42%,#2768d8 100%);transition:height .7s cubic-bezier(.5,1.05,.4,1)">
+              <svg viewBox="0 0 240 30" preserveAspectRatio="none" style="position:absolute;top:-15px;left:0;width:200%;height:24px;animation:wv1 4s linear infinite"><path d="M0 16 Q20 2 40 16 T80 16 T120 16 T160 16 T200 16 T240 16 V30 H0Z" fill="#8fcfff"></path></svg>
+              <svg viewBox="0 0 240 30" preserveAspectRatio="none" style="position:absolute;top:-11px;left:0;width:200%;height:22px;opacity:.5;animation:wv2 6.5s linear infinite reverse"><path d="M0 16 Q20 6 40 16 T80 16 T120 16 T160 16 T200 16 T240 16 V30 H0Z" fill="#bfe4ff"></path></svg>
+              <span style="position:absolute;left:20%;bottom:10px;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);animation:bub 3.6s ease-in infinite"></span>
+              <span style="position:absolute;left:50%;bottom:6px;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.5);animation:bub 3s ease-in .6s infinite"></span>
+              <span style="position:absolute;left:74%;bottom:12px;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.45);animation:bub 4.4s ease-in 1.2s infinite"></span>
+            </div>
+            <div style="position:absolute;left:0;right:0;bottom:{{ fillPx }};height:0;z-index:3;pointer-events:none">
+              <sc-for list="{{ splashes }}" as="sp" hint-placeholder-count="0">
+                <div style="position:absolute;left:50%;top:0">
+                  <div style="position:absolute;left:-15px;top:-15px;width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,0.85);animation:splashring .65s ease-out forwards"></div>
+                  <span style="position:absolute;left:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:#dff0ff;animation:spa .6s ease-out forwards"></span>
+                  <span style="position:absolute;left:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:#dff0ff;animation:spb .62s ease-out forwards"></span>
+                  <span style="position:absolute;left:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:#dff0ff;animation:spc .6s ease-out forwards"></span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="position:absolute;top:5px;left:14px;width:16px;height:60%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0));pointer-events:none"></div>
+            <div style="position:absolute;inset:0;--fall:120px;pointer-events:none">
+              <sc-for list="{{ fallingDrops }}" as="fd" hint-placeholder-count="0">
+                <span style="position:absolute;left:{{ fd.leftPct }}%;top:-4px;width:20px;height:20px;border-radius:0 50% 50% 50%;background:linear-gradient(135deg,#cfe8ff,#3f9bef);box-shadow:0 4px 11px rgba(30,90,190,0.5);animation:dropfall .5s cubic-bezier(.5,.05,.7,.6) forwards"></span>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ celebrate }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;left:0;right:0;top:250px;display:flex;align-items:center;justify-content:center;pointer-events:none">
+              <span style="position:absolute;left:40px;font-size:18px;animation:spark 1.6s ease-out forwards;color:#f3d28a">✦</span>
+              <span style="position:absolute;right:46px;top:20px;font-size:14px;animation:spark 1.6s ease-out .3s forwards;color:#f3d28a">✦</span>
+              <span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:24px;color:#f3d28a;animation:pop .5s ease both">Bucket full!</span>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ============ HISTORY ============ -->
+      <sc-if value="{{ isHistory }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="History" style="padding:2px 20px 0">
+        <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:34px;font-weight:500;color:#fff;letter-spacing:-.01em">History</div>
+        <div style="display:flex;gap:11px;margin-top:14px">
+          <div style="flex:1;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22)">
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(170,205,255,0.6)">Streak</div>
+            <div style="display:flex;align-items:baseline;gap:5px;margin-top:3px"><span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:36px;color:#f3d28a;line-height:1;font-variant-numeric:tabular-nums">{{ histStreakText }}</span><span style="font-size:13px;color:rgba(190,216,255,0.7)">days</span></div>
+          </div>
+          <div style="flex:1;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22)">
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(170,205,255,0.6)">30-day rate</div>
+            <div style="display:flex;align-items:baseline;gap:5px;margin-top:3px"><span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:36px;color:#fff;line-height:1;font-variant-numeric:tabular-nums">{{ histMetText }}</span></div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;padding:16px 16px 14px;border-radius:22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-size:13px;color:rgba(200,224,255,0.85);font-weight:600">Last 17 weeks</span>
+            <div style="display:flex;align-items:center;gap:6px;font-size:10.5px;color:rgba(170,205,255,0.6)">Less<span style="width:11px;height:11px;border-radius:3px;background:rgba(74,165,255,0.30)"></span><span style="width:11px;height:11px;border-radius:3px;background:rgba(74,165,255,0.52)"></span><span style="width:11px;height:11px;border-radius:3px;background:rgba(74,165,255,0.74)"></span><span style="width:11px;height:11px;border-radius:3px;background:linear-gradient(155deg,#6ec0ff,#2a86e8)"></span>More</div>
+          </div>
+          <div style="display:flex;gap:3px;overflow-x:auto;padding-bottom:2px">
+            <div style="display:flex;flex-direction:column;gap:3px;padding-top:14px;margin-right:1px">
+              <span style="height:13px;font-size:9px;color:rgba(170,205,255,0.5);line-height:13px">M</span>
+              <span style="height:13px;font-size:9px;color:rgba(170,205,255,0.5);line-height:13px">W</span>
+              <span style="height:13px;font-size:9px;color:rgba(170,205,255,0.5);line-height:13px;margin-top:16px">F</span>
+              <span style="height:13px;font-size:9px;color:rgba(170,205,255,0.5);line-height:13px;margin-top:16px">S</span>
+            </div>
+            <sc-for list="{{ weeks }}" as="wk" hint-placeholder-count="17">
+              <div style="display:flex;flex-direction:column;gap:3px">
+                <span style="height:11px;font-size:9px;color:rgba(170,205,255,0.55);white-space:nowrap">{{ wk.label }}</span>
+                <sc-for list="{{ wk.days }}" as="c" hint-placeholder-count="7">
+                  <div onClick="{{ c.onTap }}" style="width:13px;height:13px;border-radius:3px;cursor:pointer;background:{{ c.bg }};box-shadow:{{ c.shadow }}"></div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="height:20px"></div>
+
+        <sc-if value="{{ selDay }}" hint-placeholder-val="{{ false }}">
+          <div style="position:fixed;left:0;right:0;bottom:0;top:0;z-index:20;display:flex;align-items:center;justify-content:center">
+            <div onClick="{{ closeDay }}" style="position:absolute;inset:0;background:rgba(3,10,28,0.55)"></div>
+            <div style="position:relative;width:240px;padding:20px;border-radius:24px;background:linear-gradient(180deg,#0e3070,#0a2150);border:1px solid rgba(255,255,255,0.2);box-shadow:0 24px 60px rgba(0,0,0,0.5);animation:pop .35s ease both">
+              <div style="font-size:13px;color:rgba(190,216,255,0.75)">{{ selDay.dateText }}</div>
+              <div style="display:flex;align-items:baseline;gap:7px;margin-top:6px"><span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:44px;color:#fff;line-height:1;font-variant-numeric:tabular-nums">{{ selDay.ozText }}</span></div>
+              <div style="font-size:13px;color:rgba(190,216,255,0.7);margin-top:2px">{{ selDay.goalText }} · {{ selDay.pctText }}</div>
+              <button onClick="{{ closeDay }}" style="margin-top:16px;width:100%;padding:11px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#eaf2ff;font-size:14px;cursor:pointer" style-active="transform:scale(.97)">Close</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ============ STATS ============ -->
+      <sc-if value="{{ isStats }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Stats" style="padding:2px 20px 0">
+        <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:34px;font-weight:500;color:#fff;letter-spacing:-.01em">Stats</div>
+        <div style="display:flex;flex-direction:column;align-items:center;margin-top:10px;padding:22px;border-radius:26px;background:radial-gradient(120% 90% at 50% 0%, rgba(240,198,106,0.16), rgba(255,255,255,0.04));border:1px solid rgba(240,198,106,0.28)">
+          <svg width="30" height="34" viewBox="0 0 24 24"><path fill="#f3d28a" d="M13 2c0 4-5 5-5 10a5 5 0 0 0 10 0c0-2-1-3-1-3 0 1.5-1 2-1.5 2 .5-3-1.5-7-1.5-9Z"></path></svg>
+          <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:80px;line-height:.92;font-weight:500;color:#fff;font-variant-numeric:tabular-nums;margin-top:2px">{{ bigStreakText }}</div>
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,210,138,0.85)">Day streak</div>
+        </div>
+
+        <div style="margin-top:16px;padding:16px;border-radius:22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12)">
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(170,205,255,0.6);margin-bottom:14px">This week</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;height:104px;gap:8px">
+            <sc-for list="{{ weeklyBars }}" as="b" hint-placeholder-count="7">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;height:100%;justify-content:flex-end">
+                <div style="width:100%;max-width:24px;flex:1;display:flex;align-items:flex-end;background:rgba(255,255,255,0.07);border-radius:7px;overflow:hidden">
+                  <div style="width:100%;height:{{ b.heightPct }};background:{{ b.barBg }};border-radius:7px;transition:height .6s ease"></div>
+                </div>
+                <span style="font-size:10px;color:{{ b.labelColor }}">{{ b.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px">
+          <sc-for list="{{ statCards }}" as="s" hint-placeholder-count="6">
+            <div style="padding:15px 16px;border-radius:20px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);box-shadow:inset 0 1px 0 rgba(255,255,255,0.2)">
+              <div style="font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(170,205,255,0.6)">{{ s.label }}</div>
+              <div style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:30px;color:{{ s.valueColor }};line-height:1.05;margin-top:5px;font-variant-numeric:tabular-nums">{{ s.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height:14px"></div>
+      </div>
+      </sc-if>
+
+      <!-- ============ AWARDS ============ -->
+      <sc-if value="{{ isAwards }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Awards" style="padding:2px 20px 0">
+        <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:34px;font-weight:500;color:#fff;letter-spacing:-.01em">Awards</div>
+        <div style="font-size:13px;color:rgba(190,216,255,0.7);margin-top:2px">{{ awardsSummaryText }}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+          <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="8">
+            <div style="position:relative;padding:18px 14px 15px;border-radius:22px;background:{{ a.cardBg }};border:1px solid {{ a.borderColor }};box-shadow:inset 0 1px 0 rgba(255,255,255,0.18);text-align:center;opacity:{{ a.opacity }}">
+              <div style="width:54px;height:54px;margin:0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.25), rgba(255,255,255,0.04));border:2px solid {{ a.ringColor }}">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path fill="{{ a.ringColor }}" d="M12 2l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L12 20.4 6.6 18.2l1.2-5.9L3.4 8.2l6-.7L12 2z"></path></svg>
+              </div>
+              <div style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:17px;color:#fff;margin-top:10px;line-height:1.1">{{ a.title }}</div>
+              <div style="font-size:11px;color:rgba(190,216,255,0.62);margin-top:4px;line-height:1.3">{{ a.desc }}</div>
+              <sc-if value="{{ a.showProgress }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:10.5px;color:rgba(243,210,138,0.8);margin-top:6px;font-variant-numeric:tabular-nums">{{ a.progressText }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height:14px"></div>
+      </div>
+      </sc-if>
+
+    </div>
+
+    <!-- ============ TAB BAR ============ -->
+    <div style="flex:none;position:relative;z-index:5;padding:9px 14px 24px;display:flex;justify-content:space-around;align-items:center;background:linear-gradient(180deg,rgba(8,22,52,0),rgba(5,14,36,0.9) 42%);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.07)">
+      <button onClick="{{ goToday }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 12px" style-active="transform:scale(.92)">
+        <svg width="23" height="23" viewBox="0 0 24 24"><path fill="{{ tcToday }}" d="M12 3C12 3 5.5 10.5 5.5 15.5C5.5 19.1 8.4 21.5 12 21.5C15.6 21.5 18.5 19.1 18.5 15.5C18.5 10.5 12 3 12 3Z"></path></svg>
+        <span style="font-size:10px;letter-spacing:.03em;color:{{ tcToday }}">Today</span>
+      </button>
+      <button onClick="{{ goHistory }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 12px" style-active="transform:scale(.92)">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="{{ tcHistory }}" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="3.2"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke-linecap="round"></path><rect x="7" y="12.5" width="2.6" height="2.6" rx="0.6" fill="{{ tcHistory }}" stroke="none"></rect><rect x="14.4" y="12.5" width="2.6" height="2.6" rx="0.6" fill="{{ tcHistory }}" stroke="none"></rect></svg>
+        <span style="font-size:10px;letter-spacing:.03em;color:{{ tcHistory }}">History</span>
+      </button>
+      <button onClick="{{ goStats }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 12px" style-active="transform:scale(.92)">
+        <svg width="23" height="23" viewBox="0 0 24 24"><rect x="3.5" y="13" width="4" height="7" rx="1.3" fill="{{ tcStats }}"></rect><rect x="10" y="8" width="4" height="12" rx="1.3" fill="{{ tcStats }}"></rect><rect x="16.5" y="4" width="4" height="16" rx="1.3" fill="{{ tcStats }}"></rect></svg>
+        <span style="font-size:10px;letter-spacing:.03em;color:{{ tcStats }}">Stats</span>
+      </button>
+      <button onClick="{{ goAwards }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 12px" style-active="transform:scale(.92)">
+        <svg width="23" height="23" viewBox="0 0 24 24"><path fill="{{ tcAwards }}" d="M6 3h12v2.5a6 6 0 0 1-12 0V3Z"></path><path d="M4 4.5h2v2a4 4 0 0 1-2-1.6V4.5ZM20 4.5h-2v2a4 4 0 0 0 2-1.6V4.5Z" fill="{{ tcAwards }}"></path><rect x="10.5" y="11" width="3" height="5" fill="{{ tcAwards }}"></rect><rect x="7.5" y="18" width="9" height="2.6" rx="1.1" fill="{{ tcAwards }}"></rect></svg>
+        <span style="font-size:10px;letter-spacing:.03em;color:{{ tcAwards }}">Awards</span>
+      </button>
+    </div>
+
+    <!-- ============ GOAL SHEET ============ -->
+    <sc-if value="{{ showGoal }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeGoal }}" style="position:absolute;inset:0;z-index:30;background:rgba(3,10,28,0.62)"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;z-index:31;max-height:90%;overflow-y:auto;background:linear-gradient(180deg,#0e3070,#081d47);border-top-left-radius:32px;border-top-right-radius:32px;border-top:1px solid rgba(255,255,255,0.2);padding:12px 24px 40px;box-shadow:0 -24px 60px rgba(0,0,0,0.5)">
+          <div style="width:40px;height:5px;border-radius:999px;background:rgba(255,255,255,0.25);margin:0 auto 16px"></div>
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(170,205,255,0.6)">Daily goal</div>
+          <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:30px;color:#fff;margin-top:2px;letter-spacing:-.01em">Set your intake</div>
+
+          <div style="display:flex;align-items:center;justify-content:center;gap:22px;margin-top:20px">
+            <button onClick="{{ decGoal }}" style="width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#eaf2ff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center" style-active="transform:scale(.92)">−</button>
+            <div style="text-align:center;min-width:128px">
+              <div style="display:flex;align-items:baseline;justify-content:center;gap:6px"><span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:62px;color:#fff;line-height:1;font-variant-numeric:tabular-nums">{{ goalDraftText }}</span><span style="font-family:Didot,'Playfair Display',Georgia,serif;font-size:20px;color:rgba(200,224,255,0.7)">oz</span></div>
+              <div style="font-size:12px;color:rgba(190,216,255,0.62);margin-top:4px">≈ {{ goalGlasses }} glasses a day</div>
+            </div>
+            <button onClick="{{ incGoal }}" style="width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#eaf2ff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center" style-active="transform:scale(.92)">+</button>
+          </div>
+
+          <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(170,205,255,0.55);margin:24px 0 8px">Reminders</div>
+          <div style="border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);overflow:hidden">
+            <sc-for list="{{ reminders }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.07)">
+                <div><div style="font-size:15px;color:#eaf2ff">{{ r.label }}</div><div style="font-size:12px;color:rgba(190,216,255,0.55)">{{ r.time }}</div></div>
+                <button onClick="{{ r.onTap }}" style="position:relative;width:48px;height:28px;border-radius:999px;border:none;cursor:pointer;background:{{ r.trackBg }};transition:background .25s"><span style="position:absolute;top:3px;left:{{ r.knobLeft }};width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,0.3);transition:left .25s cubic-bezier(.3,1.4,.4,1)"></span></button>
+              </div>
+            </sc-for>
+          </div>
+
+          <button onClick="{{ saveGoal }}" style="width:100%;margin-top:20px;padding:16px;border-radius:999px;border:none;cursor:pointer;background:linear-gradient(180deg,#5bb6ff,#2768d8);color:#fff;font-size:16px;font-weight:600;box-shadow:0 12px 28px rgba(39,104,216,0.45), inset 0 1px 0 rgba(255,255,255,0.35)" style-active="transform:scale(.98)">Save goal</button>
+          <button onClick="{{ resetToday }}" style="width:100%;margin-top:10px;padding:12px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);cursor:pointer;background:transparent;color:rgba(200,224,255,0.7);font-size:13px" style-active="transform:scale(.98)">Reset today's intake</button>
+      </div>
+    </sc-if>
+
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;440&quot;,&quot;height&quot;:&quot;904&quot;},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;'A'|'B'|'C'&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    const goalOz = 80;
+    this.history = this.buildHistory(goalOz);
+    this.state = {
+      screen:'today', goalOz, consumedOz:36,
+      fallingDrops:[], splashes:[], celebrate:false,
+      selectedDayKey:null, showGoal:false, goalDraft:goalOz,
+      reminders:{ morning:true, midday:true, afternoon:false, evening:true },
+      cAnim:{ sip:'idle', glass:'idle', bottle:'idle' },
+      aAnim:{ sip:'idle', glass:'idle', bottle:'idle' },
+      nextId:1,
+    };
+  }
+  rng(seed){ let a=seed>>>0; return function(){ a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  midnight(){ const t=new Date(); t.setHours(0,0,0,0); return t; }
+  dkey(d){ return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+  buildHistory(goalOz){
+    const rand=this.rng(0x9e3779b9); const today=this.midnight(); const arr=[]; const days=118;
+    for(let i=days;i>=1;i--){
+      const d=new Date(today); d.setDate(today.getDate()-i);
+      const r=rand(); let frac;
+      if(i<=5){ frac=1.02+rand()*0.22; }
+      else if(r<0.58){ frac=1.0+rand()*0.2; }
+      else if(r<0.8){ frac=0.72+rand()*0.26; }
+      else { frac=0.34+rand()*0.4; }
+      if(rand()<0.05 && i>6) frac=0.12+rand()*0.16;
+      const oz=Math.max(0,Math.round(goalOz*frac));
+      arr.push({ key:this.dkey(d), date:d, oz, goal:goalOz, pct:oz/goalOz });
+    }
+    return arr;
+  }
+  addWater(oz){
+    const id=this.state.nextId;
+    this.setState(s=>{
+      const consumedOz=s.consumedOz+oz;
+      const nowMet=s.consumedOz<s.goalOz && consumedOz>=s.goalOz;
+      return { nextId:s.nextId+1, consumedOz, splashes:[...s.splashes,{id}], celebrate: nowMet?true:s.celebrate };
+    });
+    setTimeout(()=>this.setState(s=>({splashes:s.splashes.filter(x=>x.id!==id)})),720);
+    setTimeout(()=>{ if(this.state.celebrate) this.setState({celebrate:false}); }, 3400);
+  }
+  burstDropA(oz, slot){
+    this.setState(s=>({ aAnim:{...s.aAnim,[slot]:'burst'} }));
+    this.selectDrop(oz);
+    setTimeout(()=>this.setState(s=>({ aAnim:{...s.aAnim,[slot]:'idle'} })),520);
+  }
+  selectDrop(oz){
+    const id=this.state.nextId;
+    const leftPct=50+(Math.random()*22-11);
+    this.setState(s=>({ nextId:s.nextId+1, fallingDrops:[...s.fallingDrops,{id,oz,leftPct}] }));
+    setTimeout(()=>{
+      this.setState(s=>({ fallingDrops:s.fallingDrops.filter(d=>d.id!==id) }));
+      this.addWater(oz);
+    },510);
+  }
+  burstDropC(oz, slot){
+    this.setState(s=>({ cAnim:{...s.cAnim,[slot]:'burst'} }));
+    setTimeout(()=>{
+      this.addWater(oz);
+      this.setState(s=>({ cAnim:{...s.cAnim,[slot]:'pop'} }));
+      setTimeout(()=>this.setState(s=>({ cAnim:{...s.cAnim,[slot]:'idle'} })),360);
+    },430);
+  }
+  resetToday(){ this.setState({consumedOz:0,celebrate:false}); }
+  go(screen){ this.setState({screen, selectedDayKey:null}); }
+  openGoal(){ this.setState({showGoal:true, goalDraft:this.state.goalOz}); }
+  closeGoal(){ this.setState({showGoal:false}); }
+  saveGoal(){ this.setState(s=>({goalOz:s.goalDraft, showGoal:false})); }
+  incGoal(){ this.setState(s=>({goalDraft:Math.min(160,s.goalDraft+8)})); }
+  decGoal(){ this.setState(s=>({goalDraft:Math.max(32,s.goalDraft-8)})); }
+  toggleReminder(k){ this.setState(s=>({reminders:{...s.reminders,[k]:!s.reminders[k]}})); }
+  selectDay(key){ this.setState({selectedDayKey:key}); }
+  closeDay(){ this.setState({selectedDayKey:null}); }
+
+  renderVals(){
+    const S=this.state;
+    const variant=(this.props.variant||'A');
+    const goal=S.goalOz, consumed=S.consumedOz;
+    const pct=goal>0?consumed/goal:0; const pctC=Math.max(0,Math.min(1,pct));
+    const today=this.midnight();
+    const todayCell={ key:'today', date:today, oz:consumed, goal, pct:(goal>0?consumed/goal:0), isToday:true };
+    const allDays=[...this.history, todayCell];
+    let streak=0, si=allDays.length-1; if(allDays[si].pct<1) si--; for(; si>=0; si--){ if(allDays[si].pct>=1) streak++; else break; }
+    let longest=0,run=0; allDays.forEach(d=>{ if(d.pct>=1){run++; longest=Math.max(longest,run);} else run=0; });
+    const last30=allDays.slice(-30); const comp30=last30.filter(d=>d.pct>=1).length/last30.length;
+    const last7=allDays.slice(-7); const avg7=Math.round(last7.reduce((a,d)=>a+d.oz,0)/last7.length);
+    const best=allDays.reduce((m,d)=>Math.max(m,d.oz),0);
+    const monthTotal=allDays.filter(d=>d.date.getMonth()===today.getMonth() && d.date.getFullYear()===today.getFullYear()).reduce((a,d)=>a+d.oz,0);
+
+    const dow=(allDays[0].date.getDay()+6)%7;
+    const cells=[]; for(let i=0;i<dow;i++) cells.push({empty:true});
+    allDays.forEach(d=>cells.push(d));
+    while(cells.length%7!==0) cells.push({empty:true});
+    const monthShort=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const weeks=[]; let lastMonth=-1;
+    for(let w=0; w<cells.length/7; w++){
+      const slice=cells.slice(w*7,w*7+7);
+      const daysArr=slice.map(c=>{
+        if(c.empty) return {empty:true, bg:'transparent', shadow:'none', onTap:null};
+        const p=c.pct; let bg,shadow='none';
+        if(p<0.01) bg='rgba(255,255,255,0.06)';
+        else if(p<0.5) bg='rgba(74,165,255,0.30)';
+        else if(p<0.85) bg='rgba(74,165,255,0.52)';
+        else if(p<1) bg='rgba(74,165,255,0.74)';
+        else { bg='linear-gradient(155deg,#6ec0ff,#2a86e8)'; shadow='inset 0 0 0 1.5px rgba(240,198,106,0.9)'; }
+        if(c.isToday) shadow='inset 0 0 0 1.5px rgba(255,255,255,0.95)';
+        const key=c.key;
+        return { bg, shadow, onTap:()=>this.selectDay(key) };
+      });
+      const firstReal=slice.find(c=>!c.empty);
+      let label='';
+      if(firstReal){ const m=firstReal.date.getMonth(); if(m!==lastMonth){ label=monthShort[m]; lastMonth=m; } }
+      weeks.push({label, days:daysArr});
+    }
+
+    let selDay=null;
+    if(S.selectedDayKey){
+      const d=allDays.find(x=>x.key===S.selectedDayKey);
+      if(d) selDay={ dateText:d.date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}), ozText:d.oz+' oz', goalText:'of '+d.goal+' oz', pctText:Math.round(d.pct*100)+'%' };
+    }
+
+    const dlabel=['M','T','W','T','F','S','S'];
+    const weeklyBars=last7.map(d=>{
+      const h=Math.max(5,Math.min(100,Math.round(d.pct*100)));
+      const wd=(d.date.getDay()+6)%7;
+      return { label:dlabel[wd], heightPct:h+'%', barBg: d.pct>=1?'linear-gradient(180deg,#f3d28a,#d9a93f)':'linear-gradient(180deg,#5bb6ff,#2768d8)', labelColor: d.key==='today'?'#f3d28a':'rgba(170,205,255,0.6)' };
+    });
+
+    const ach=[
+      {id:'first',title:'First Drop',desc:'Log your first sip',unlocked:true},
+      {id:'crush',title:'Goal Crusher',desc:'Hit 100% in a day',unlocked:allDays.some(d=>d.pct>=1)},
+      {id:'roll',title:'On a Roll',desc:'3-day streak',unlocked:longest>=3,progressText:Math.min(longest,3)+' / 3'},
+      {id:'week',title:'Week Warrior',desc:'7-day streak',unlocked:longest>=7,progressText:Math.min(longest,7)+' / 7'},
+      {id:'iron',title:'Iron Will',desc:'14-day streak',unlocked:longest>=14,progressText:Math.min(longest,14)+' / 14'},
+      {id:'hero',title:'Hydration Hero',desc:'Meet goal 80% of 30 days',unlocked:comp30>=0.8,progressText:Math.round(comp30*100)+'% / 80%'},
+      {id:'over',title:'Overflow',desc:'Exceed 125% in one day',unlocked:best>=goal*1.25},
+      {id:'half',title:'Half Gallon',desc:'64 oz in a single day',unlocked:best>=64},
+    ];
+    const unlockedCount=ach.filter(x=>x.unlocked).length;
+    const achievements=ach.map(x=>({
+      title:x.title, desc:x.desc,
+      ringColor: x.unlocked?'#f3d28a':'rgba(255,255,255,0.22)',
+      borderColor: x.unlocked?'rgba(240,198,106,0.4)':'rgba(255,255,255,0.1)',
+      cardBg: x.unlocked?'radial-gradient(120% 90% at 50% 0%, rgba(240,198,106,0.14), rgba(255,255,255,0.04))':'rgba(255,255,255,0.04)',
+      opacity: x.unlocked?'1':'0.5',
+      showProgress: (!x.unlocked && !!x.progressText),
+      progressText: x.progressText||'',
+    }));
+
+    const r=158, C=2*Math.PI*r;
+    const ringAngle=pctC*2*Math.PI, ringLabelR=158;
+    const ringPctX=(170+ringLabelR*Math.sin(ringAngle)).toFixed(1)+'px';
+    const ringPctY=(170-ringLabelR*Math.cos(ringAngle)).toFixed(1)+'px';
+    const remDefs=[ {key:'morning',label:'Morning',time:'8:00 AM'},{key:'midday',label:'Midday',time:'12:30 PM'},{key:'afternoon',label:'Afternoon',time:'3:30 PM'},{key:'evening',label:'Evening',time:'7:00 PM'} ];
+    const reminders=remDefs.map(rd=>{ const on=!!S.reminders[rd.key]; return { label:rd.label, time:rd.time, onTap:()=>this.toggleReminder(rd.key), trackBg:on?'linear-gradient(180deg,#5bb6ff,#2768d8)':'rgba(255,255,255,0.16)', knobLeft:on?'23px':'3px' }; });
+
+    // ---- time-of-day pacing ----
+    const nowD=new Date();
+    const nowMin=nowD.getHours()*60+nowD.getMinutes();
+    const wakeStart=7*60, dayEnd=22*60;
+    const elapsedFrac=Math.max(0,Math.min(1,(nowMin-wakeStart)/(dayEnd-wakeStart)));
+    const idealPct=Math.round(elapsedFrac*100)+'%';
+    const expectedOz=goal*elapsedFrac;
+    const fmtTime=(mins)=>{ let h=Math.floor(mins/60), m=Math.round(mins%60); const ap=h>=12?'PM':'AM'; let hh=h%12; if(hh===0)hh=12; return hh+':'+String(m).padStart(2,'0')+' '+ap; };
+    const nowTimeText=fmtTime(Math.max(wakeStart,Math.min(dayEnd,nowMin)));
+    const pdiff=consumed-expectedOz;
+    let paceLabel, paceColor;
+    if(consumed>=goal){ paceLabel='Goal complete — nicely done'; paceColor='#3ad6a0'; }
+    else if(elapsedFrac<=0.02){ paceLabel='Fresh start'; paceColor='#9fc6ff'; }
+    else if(pdiff>goal*0.05){ paceLabel='Ahead of pace'; paceColor='#3ad6a0'; }
+    else if(pdiff<-goal*0.08){ paceLabel='A little behind'; paceColor='#bcd0f2'; }
+    else {
+      const elapsedHours=Math.max(0.5,(nowMin-wakeStart)/60);
+      const rate=consumed/elapsedHours;
+      const remaining=goal-consumed;
+      if(rate>0.5){ const finishMin=nowMin+(remaining/rate)*60; paceLabel= finishMin<=dayEnd+120 ? 'On pace for '+fmtTime(finishMin) : 'On pace'; }
+      else paceLabel='On pace';
+      paceColor='#9fc6ff';
+    }
+    // ---- 7-day mini history ----
+    const dlabel7=['M','T','W','T','F','S','S'];
+    const pace7=last7.map(d=>{
+      const p=Math.max(0,Math.min(1,d.pct));
+      const wd=(d.date.getDay()+6)%7;
+      const met=d.pct>=1;
+      return {
+        label:dlabel7[wd],
+        h:Math.max(10,Math.round(p*100))+'%',
+        bg: met?'linear-gradient(180deg,#3ad6a0,#1f9e85)': (p<0.12?'rgba(255,255,255,0.13)':'linear-gradient(180deg,#6db8ff,#3f7fd8)'),
+        labelColor: d.key==='today'?'#3ad6a0':'rgba(170,205,255,0.6)'
+      };
+    });
+    const weekMet=last7.filter(d=>d.pct>=1).length;
+    const weekMetText=weekMet+' of 7 days met';
+
+    const hr=new Date().getHours();
+    const greeting= hr<5?'Still up?': hr<12?'Good morning':hr<17?'Good afternoon':hr<21?'Good evening':'Wind down';
+
+    return {
+      variant, isVarA:variant==='A', isVarB:variant==='B', isVarC:variant==='C',
+      isToday:S.screen==='today', isHistory:S.screen==='history', isStats:S.screen==='stats', isAwards:S.screen==='awards',
+      showGoal:S.showGoal,
+      goToday:()=>this.go('today'), goHistory:()=>this.go('history'), goStats:()=>this.go('stats'), goAwards:()=>this.go('awards'),
+      openGoal:()=>this.openGoal(), closeGoal:()=>this.closeGoal(), saveGoal:()=>this.saveGoal(), incGoal:()=>this.incGoal(), decGoal:()=>this.decGoal(), resetToday:()=>this.resetToday(), closeDay:()=>this.closeDay(),
+      dropSip:()=>this.selectDrop(2), dropGlass:()=>this.selectDrop(8), dropBottle:()=>this.selectDrop(16),
+      aSip:()=>this.burstDropA(2,'sip'), aGlass:()=>this.burstDropA(8,'glass'), aBottle:()=>this.burstDropA(16,'bottle'),
+      aSipPunch: S.aAnim.sip==='burst'?'dpunch .5s ease':'none',
+      aGlassPunch: S.aAnim.glass==='burst'?'dpunch .5s ease':'none',
+      aBottlePunch: S.aAnim.bottle==='burst'?'dpunch .5s ease':'none',
+      aSipRing: S.aAnim.sip==='burst'?'dburstring .55s ease-out':'none',
+      aGlassRing: S.aAnim.glass==='burst'?'dburstring .55s ease-out':'none',
+      aBottleRing: S.aAnim.bottle==='burst'?'dburstring .55s ease-out':'none',
+      cSip:()=>this.burstDropC(2,'sip'), cGlass:()=>this.burstDropC(8,'glass'), cBottle:()=>this.burstDropC(16,'bottle'),
+      cSipAnim: S.cAnim.sip==='burst'?'cburst .43s cubic-bezier(.5,.05,.7,.6) forwards': S.cAnim.sip==='pop'?'cpop .36s cubic-bezier(.2,1.5,.4,1) both':'bob 3.2s ease-in-out infinite',
+      cBottleAnim: S.cAnim.bottle==='burst'?'cburst .43s cubic-bezier(.5,.05,.7,.6) forwards': S.cAnim.bottle==='pop'?'cpop .36s cubic-bezier(.2,1.5,.4,1) both':'bob 4s ease-in-out .4s infinite',
+      cGlassAnim: S.cAnim.glass==='burst'?'cburst .43s cubic-bezier(.5,.05,.7,.6) forwards': S.cAnim.glass==='pop'?'cpop .36s cubic-bezier(.2,1.5,.4,1) both':'bob 3.6s ease-in-out .8s infinite',
+      tcToday:S.screen==='today'?'#eaf4ff':'rgba(255,255,255,0.4)',
+      tcHistory:S.screen==='history'?'#eaf4ff':'rgba(255,255,255,0.4)',
+      tcStats:S.screen==='stats'?'#eaf4ff':'rgba(255,255,255,0.4)',
+      tcAwards:S.screen==='awards'?'#eaf4ff':'rgba(255,255,255,0.4)',
+      consumedText:consumed, goalText:goal,
+      pctText:Math.round(pct*100)+'%', fillPct:(pctC*100).toFixed(1)+'%', fillPx:Math.round(pctC*(variant==='B'?288:variant==='C'?158:226))+'px',
+      dropletNote: consumed>=goal? 'Goal complete' : (Math.max(0,goal-consumed)+' oz to go'),
+      ringDash:C+' '+C, ringOffset:C*(1-pctC), ringColor: pct>=1?'#5cf0bd':'#2fd39a', ringPctX, ringPctY,
+      streakText:streak, dateText: today.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}), greeting,
+      paceLabel, paceColor, idealPct, nowTimeText, pace7, weekMetText,
+      fallingDrops:S.fallingDrops, splashes:S.splashes, celebrate:S.celebrate,
+      weeks, selDay, histStreakText:streak, histMetText:Math.round(comp30*100)+'%',
+      statCards:[
+        {label:'Current streak',value:streak+(streak===1?' day':' days'),valueColor:streak>=3?'#f3d28a':'#fff'},
+        {label:'Longest streak',value:longest+' days',valueColor:'#fff'},
+        {label:'Daily average',value:avg7+' oz',valueColor:'#fff'},
+        {label:'Goal completion',value:Math.round(comp30*100)+'%',valueColor:comp30>=0.8?'#f3d28a':'#fff'},
+        {label:'Best day',value:best+' oz',valueColor:'#fff'},
+        {label:'This month',value:monthTotal+' oz',valueColor:'#fff'},
+      ],
+      weeklyBars, bigStreakText:streak,
+      achievements, awardsSummaryText: unlockedCount+' of '+ach.length+' unlocked',
+      goalDraftText:S.goalDraft, goalGlasses:Math.round(S.goalDraft/8), reminders,
+    };
+  }
+}
+</script>
+</body>
+</html>
