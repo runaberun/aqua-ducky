@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { WaterView } from '../useWaterApp'
 import { DISPLAY, C } from '../style'
 import { CountUp } from '../CountUp'
-import { DuckCup } from '../DuckCup'
+import { HeroDucky } from '../HeroDucky'
 
 interface Props {
   view: WaterView
@@ -104,7 +104,7 @@ export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, 
 
         {/* the cup — a progress indicator; it drains as the day's water is logged */}
         <div style={{ marginTop: 6, userSelect: 'none', WebkitUserSelect: 'none' }}>
-          <DuckCup fill={v.cupFill} goalDone={v.goalMet} sipping={sipping} width={224} />
+          <HeroDucky fill={v.cupFill} goalDone={v.goalMet} sipping={sipping} width={240} />
         </div>
 
         {/* progress + goal, below the duck */}

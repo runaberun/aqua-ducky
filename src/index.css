@@ -134,6 +134,24 @@ body {
   100% { transform: rotate(0) translateY(0); }
 }
 .dc-sip { animation: dcsip .5s ease; }
+/* hero (raster duck) sip: a gentle whole-duck bob since the head can't move alone */
+@keyframes herosip {
+  0%   { transform: translateY(0) scale(1); }
+  30%  { transform: translateY(3px) scale(0.985); }
+  60%  { transform: translateY(3px) scale(0.985); }
+  100% { transform: translateY(0) scale(1); }
+}
+.hero-sip { animation: herosip .5s ease; transform-origin: 50% 86%; }
+/* hero sunglasses drop onto the duck at goal, dip once, then settle */
+@keyframes hdshades {
+  0%   { transform: translateY(-40px); opacity: 0; }
+  20%  { transform: translateY(0); opacity: 1; }
+  48%  { transform: translateY(0); }
+  62%  { transform: translateY(8px); }
+  78%  { transform: translateY(8px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.hd-shades { animation: hdshades 1.4s cubic-bezier(.3,1.2,.4,1) both; }
 /* shades drop down from the forehead, dip once (the wink), then settle.
    transform-only so the glasses are always visible at rest, even if the
    entrance animation never runs (reduced-motion, etc.) */
