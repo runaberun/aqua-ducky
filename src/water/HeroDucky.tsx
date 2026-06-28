@@ -47,7 +47,7 @@ export function HeroDucky({
       style={{ position: 'relative', width, height: width, willChange: 'transform', ...style }}
     >
       <img
-        src="/aquaducky-hero.svg"
+        src={`${import.meta.env.BASE_URL}aquaducky-hero.svg`}
         alt="AquaDucky"
         draggable={false}
         style={{ width: '100%', height: '100%', display: 'block', userSelect: 'none' }}

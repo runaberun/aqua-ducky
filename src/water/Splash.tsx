@@ -17,7 +17,7 @@ export function Splash() {
     >
       <div style={{ animation: 'logospring 1.05s cubic-bezier(.2,.8,.3,1) both', willChange: 'transform' }}>
         <img
-          src="/aquaducky-splash.svg"
+          src={`${import.meta.env.BASE_URL}aquaducky-splash.svg`}
           alt="AquaDucky"
           draggable={false}
           style={{ width: 'min(80vw, 360px)', height: 'auto', display: 'block', userSelect: 'none' }}
