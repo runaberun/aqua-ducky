@@ -1,3 +1,43 @@
+# Water Tracker
+
+A deep-blue, Didone-typographic hydration app (variant **A — Chalice**), implemented in
+**React + Vite + TypeScript** from the Claude Design handoff below.
+
+## Run it
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # typecheck (tsc -b) + production build to dist/
+npm run preview  # serve the production build
+```
+
+## What's built
+
+The polished single-app experience inside a realistic iPhone bezel:
+
+- **Today (Chalice)** — the hero drop→fill mechanic: tap **Sip / Glass / Bottle (2 / 8 / 16 oz)**;
+  the drop bursts, a droplet falls and splashes, the glass fills, the emerald progress ring +
+  live `%` badge advance, and a gold celebration fires at the goal. Plus a non-judgmental
+  time-of-day **pacing line** and a 7-day **weekly consistency** chart.
+- **History** — 17-week calendar heatmap with a tap-to-open day detail popup.
+- **Stats** — day-streak hero, weekly bars, and KPI cards.
+- **Awards** — locked/unlocked badge grid.
+- **Goal sheet** — stepper (32–160 oz) + reminder toggles, save / reset.
+
+### Source map
+
+- `src/ios/IOSDevice.tsx` — the iPhone frame (status bar, dynamic island, home indicator).
+- `src/water/history.ts` — seeded demo history + date helpers.
+- `src/water/useWaterApp.ts` — state, actions, and the derived view (port of the prototype's `renderVals`).
+- `src/water/WaterApp.tsx` — screen container + ambient glow + tab bar + goal sheet.
+- `src/water/screens/` — `TodayA`, `History`, `Stats`, `Awards`.
+- `src/index.css` — keyframes (drop fall, splash, bubbles, sparks, …) and press feedback.
+
+The original design bundle is preserved under `project/` and `chats/`.
+
+---
+
 # CODING AGENTS: READ THIS FIRST
 
 This is a **handoff bundle** from Claude Design (claude.ai/design).

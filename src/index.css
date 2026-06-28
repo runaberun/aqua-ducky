@@ -1,0 +1,172 @@
+/* ------------------------------------------------------------------ */
+/*  Water Tracker — global styles                                       */
+/*  Keyframes ported verbatim from the WaterApp.dc.html prototype.      */
+/* ------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #ece6d8;
+}
+
+/* Hide scrollbars inside the phone (matches prototype) */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* ---- Page shell: center the device ---- */
+.page-shell {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: radial-gradient(120% 120% at 50% 0%, #f3ede0 0%, #e9e1cf 60%, #ddd3bd 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Keyframes                                                           */
+/* ------------------------------------------------------------------ */
+@keyframes wv1 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes wv2 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes dropfall {
+  0%   { transform: translateY(0) scale(.6); opacity: 0; }
+  16%  { opacity: 1; }
+  80%  { transform: translateY(var(--fall, 150px)) scale(1); opacity: 1; }
+  100% { transform: translateY(var(--fall, 150px)) scaleX(1.6) scaleY(.4); opacity: 0; }
+}
+@keyframes splashring {
+  0%   { transform: translate(-50%, 0) scale(.2); opacity: 0; }
+  25%  { opacity: .85; }
+  100% { transform: translate(-50%, 0) scale(1.8); opacity: 0; }
+}
+@keyframes spa { 0% { transform: translate(0, 0) scale(1); opacity: .95; } 100% { transform: translate(-18px, -22px) scale(.25); opacity: 0; } }
+@keyframes spb { 0% { transform: translate(0, 0) scale(1); opacity: .95; } 100% { transform: translate(0, -30px) scale(.25); opacity: 0; } }
+@keyframes spc { 0% { transform: translate(0, 0) scale(1); opacity: .95; } 100% { transform: translate(18px, -22px) scale(.25); opacity: 0; } }
+@keyframes bub {
+  0%   { transform: translateY(8px) scale(.5); opacity: 0; }
+  30%  { opacity: .5; }
+  100% { transform: translateY(-60px) scale(1); opacity: 0; }
+}
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes spark {
+  0%   { transform: scale(0) rotate(0deg); opacity: 0; }
+  35%  { opacity: 1; }
+  100% { transform: scale(1.35) rotate(40deg); opacity: 0; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glowpulse { 0%, 100% { opacity: .45; } 50% { opacity: .85; } }
+@keyframes dpunch {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.34); }
+  62%  { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+@keyframes dburstring {
+  0%   { transform: translate(-50%, -50%) scale(.5); opacity: .85; }
+  100% { transform: translate(-50%, -50%) scale(2.3); opacity: 0; }
+}
+@keyframes goalflash { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes checkdraw { from { stroke-dashoffset: 26; } to { stroke-dashoffset: 0; } }
+/* "today" pulse — azure-outline blink (reads on the light cream theme) */
+@keyframes daypulse {
+  0%, 100% { box-shadow: inset 0 0 0 2px rgba(47,143,214,0.45); }
+  50%      { box-shadow: inset 0 0 0 2.5px rgba(47,143,214,1), 0 0 9px rgba(47,143,214,0.45); }
+}
+.today-pulse { animation: daypulse 1.3s ease-in-out infinite; }
+/* a duck paddling across the trends pacing track */
+@keyframes duckswim {
+  0%   { left: -10%; transform: translateY(0) rotate(-3deg); }
+  50%  { transform: translateY(-3px) rotate(3deg); }
+  100% { left: 104%; transform: translateY(0) rotate(-3deg); }
+}
+/* gentle bob for the little floating friend riding the water surface */
+@keyframes floatbob {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(-5deg); }
+  50%      { transform: translateX(-50%) translateY(-4px) rotate(5deg); }
+}
+/* ---- AquaDucky launch splash: water rises and the duck rises with it ---- */
+@keyframes splashfade { 0%, 80% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+/* bouncy spring entrance for the logo: scales up fast, overshoots, settles, with a slight rotation */
+@keyframes logospring {
+  0%   { transform: scale(.25) rotate(-16deg); opacity: 0; }
+  45%  { opacity: 1; }
+  60%  { transform: scale(1.12) rotate(7deg); opacity: 1; }
+  74%  { transform: scale(.94) rotate(-4deg); }
+  86%  { transform: scale(1.04) rotate(2deg); }
+  94%  { transform: scale(.99) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes waterrise { 0% { height: 0; } 64% { height: 64%; } 100% { height: 64%; } }
+@keyframes duckrise {
+  0%   { bottom: 2%; }
+  64%  { bottom: 60%; }
+  100% { bottom: 60%; }
+}
+@keyframes duckbob { 0%, 100% { transform: translateX(-50%) rotate(-6deg); } 50% { transform: translateX(-50%) translateY(-5px) rotate(6deg); } }
+@keyframes titlein { 0%, 30% { opacity: 0; transform: translateY(10px); } 52% { opacity: 1; transform: translateY(0); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes risebub { 0% { transform: translateY(0) scale(.6); opacity: 0; } 25% { opacity: .7; } 100% { transform: translateY(-180px) scale(1); opacity: 0; } }
+@keyframes pop {
+  0%   { transform: scale(0); opacity: 0; }
+  62%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- DuckCup: sip nod, sunglasses-on wink, swipe hint ---- */
+@keyframes dcsip {
+  0%   { transform: rotate(0) translateY(0); }
+  28%  { transform: rotate(-6deg) translateY(2px); }
+  60%  { transform: rotate(-6deg) translateY(2px); }
+  100% { transform: rotate(0) translateY(0); }
+}
+.dc-sip { animation: dcsip .5s ease; }
+/* shades drop down from the forehead, dip once (the wink), then settle.
+   transform-only so the glasses are always visible at rest, even if the
+   entrance animation never runs (reduced-motion, etc.) */
+@keyframes dcshades {
+  0%   { transform: translateY(-24px); }
+  14%  { transform: translateY(0); }
+  42%  { transform: translateY(0); }
+  56%  { transform: translateY(9px); }
+  72%  { transform: translateY(9px); }
+  90%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+.dc-shades { animation: dcshades 1.9s cubic-bezier(.3,1.25,.4,1) both; }
+/* the eye blinks shut exactly while the shades are lowered */
+@keyframes dcwinkopen { 0%,54% { opacity: 1; } 56%,70% { opacity: 0; } 72%,100% { opacity: 1; } }
+@keyframes dcwinkline { 0%,54% { opacity: 0; } 57%,69% { opacity: 1; } 72%,100% { opacity: 0; } }
+.dc-wink { animation: dcwinkopen 1.9s ease both; }
+.dc-winkline { animation: dcwinkline 1.9s ease both; }
+/* swipe-up hint chevron */
+@keyframes chevup { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-6px); opacity: 1; } }
+.chev-up { animation: chevup 1.4s ease-in-out infinite; }
+/* right-arrow nudge on the oz wheel, hinting it scrolls */
+@keyframes chevpulse { 0%,100% { transform: translateY(-50%) translateX(0); } 50% { transform: translateY(-50%) translateX(3px); } }
+.chev-pulse { animation: chevpulse 1.3s ease-in-out infinite; }
+
+/* ------------------------------------------------------------------ */
+/*  Press feedback (replaces the prototype's style-active attribute)    */
+/* ------------------------------------------------------------------ */
+.press,
+.press-drop,
+.press-soft {
+  transition: transform .08s ease;
+}
+.press:active { transform: scale(.92); }
+.press-drop:active { transform: translateY(2px) scale(.93); }
+.press-soft:active { transform: scale(.98); }
