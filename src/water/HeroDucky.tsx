@@ -3,26 +3,23 @@ import type { CSSProperties } from 'react'
 
 // The AquaDucky hero is a set of hand-drawn images, one per 10% band of the
 // daily goal *remaining*. As water is logged the remaining % drops and we swap
-// to the matching artwork (the glass fills up as you approach your goal).
+// to the matching artwork.
 //
-//   100%        -> ducky-100   (exactly 100% remaining, i.e. nothing logged yet)
-//   90-99%      -> ducky-90
-//   80-89%      -> ducky-80
-//   ...and so on, in 10% bands, down to:
-//   1-19%       -> ducky-10    (the lowest art covers the whole 1-19% range)
-//   0%          -> ducky-0     (goal reached; art pending, falls back for now)
+//   91-100%  -> ducky-100
+//   81-90%   -> ducky-90
+//   71-80%   -> ducky-80
+//   ...each band is the top of a 10-point range...
+//   1-10%    -> ducky-10
+//   0%       -> ducky-0     (goal reached: the duck kicks back with shades on)
 //
-// BUCKETS lists the bands we currently have art for. Add 0 here once that image
-// is dropped into public/hero/. Bands without their own image fall back to the
-// closest available one.
-const BUCKETS = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
+// i.e. round the remaining % UP to the nearest 10 (and 0 is its own band).
+// BUCKETS lists the bands we have art for; any gap falls back to the closest.
+const BUCKETS = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0]
 
 function bucketFor(remainingPct: number): number {
-  const r = Math.max(0, Math.min(100, remainingPct))
-  let band: number
-  if (r >= 100) band = 100
-  else if (r <= 0) band = 0 // goal reached
-  else band = Math.max(10, Math.floor(r / 10) * 10) // 1-9% shares the 10% art
+  // round away tiny float error (e.g. 64/80*100 = 80.0000001) before bucketing
+  const r = Math.max(0, Math.min(100, Math.round(remainingPct * 1e6) / 1e6))
+  const band = r <= 0 ? 0 : Math.ceil(r / 10) * 10
   if (BUCKETS.includes(band)) return band
   return BUCKETS.reduce((best, b) => (Math.abs(b - band) < Math.abs(best - band) ? b : best), BUCKETS[0])
 }
@@ -82,8 +79,8 @@ export function HeroDucky({
             height: '100%',
             display: 'block',
             userSelect: 'none',
-            // the topmost (latest) layer fades in; older layer sits beneath
-            animation: i === layers.length - 1 && layers.length > 1 ? 'herofade .45s ease both' : undefined,
+            // the topmost (latest) layer springs in over the previous one
+            animation: i === layers.length - 1 && layers.length > 1 ? 'heroswap .6s cubic-bezier(.34,1.4,.5,1) both' : undefined,
           }}
         />
       ))}

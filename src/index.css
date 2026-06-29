@@ -134,8 +134,13 @@ body {
   100% { transform: translateY(0) scale(1); }
 }
 .hero-sip { animation: herosip .5s ease; transform-origin: 50% 86%; }
-/* crossfade when the hero swaps to a new goal-remaining band */
-@keyframes herofade { from { opacity: 0; } to { opacity: 1; } }
+/* hero band swap: the new artwork rises and springs into place, fading in
+   over the outgoing image (which sits beneath), like the scene settling */
+@keyframes heroswap {
+  0%   { opacity: 0; transform: translateY(16px) scale(0.93); }
+  55%  { opacity: 1; transform: translateY(-4px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
 /* swipe-up hint chevron */
 @keyframes chevup { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-6px); opacity: 1; } }
 .chev-up { animation: chevup 1.4s ease-in-out infinite; }
