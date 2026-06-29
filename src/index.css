@@ -126,14 +126,6 @@ body {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* ---- DuckCup: sip nod, sunglasses-on wink, swipe hint ---- */
-@keyframes dcsip {
-  0%   { transform: rotate(0) translateY(0); }
-  28%  { transform: rotate(-6deg) translateY(2px); }
-  60%  { transform: rotate(-6deg) translateY(2px); }
-  100% { transform: rotate(0) translateY(0); }
-}
-.dc-sip { animation: dcsip .5s ease; }
 /* hero (raster duck) sip: a gentle whole-duck bob since the head can't move alone */
 @keyframes herosip {
   0%   { transform: translateY(0) scale(1); }
@@ -144,34 +136,6 @@ body {
 .hero-sip { animation: herosip .5s ease; transform-origin: 50% 86%; }
 /* crossfade when the hero swaps to a new goal-remaining band */
 @keyframes herofade { from { opacity: 0; } to { opacity: 1; } }
-/* hero sunglasses drop onto the duck at goal, dip once, then settle */
-@keyframes hdshades {
-  0%   { transform: translateY(-40px); opacity: 0; }
-  20%  { transform: translateY(0); opacity: 1; }
-  48%  { transform: translateY(0); }
-  62%  { transform: translateY(8px); }
-  78%  { transform: translateY(8px); }
-  100% { transform: translateY(0); opacity: 1; }
-}
-.hd-shades { animation: hdshades 1.4s cubic-bezier(.3,1.2,.4,1) both; }
-/* shades drop down from the forehead, dip once (the wink), then settle.
-   transform-only so the glasses are always visible at rest, even if the
-   entrance animation never runs (reduced-motion, etc.) */
-@keyframes dcshades {
-  0%   { transform: translateY(-24px); }
-  14%  { transform: translateY(0); }
-  42%  { transform: translateY(0); }
-  56%  { transform: translateY(9px); }
-  72%  { transform: translateY(9px); }
-  90%  { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-.dc-shades { animation: dcshades 1.9s cubic-bezier(.3,1.25,.4,1) both; }
-/* the eye blinks shut exactly while the shades are lowered */
-@keyframes dcwinkopen { 0%,54% { opacity: 1; } 56%,70% { opacity: 0; } 72%,100% { opacity: 1; } }
-@keyframes dcwinkline { 0%,54% { opacity: 0; } 57%,69% { opacity: 1; } 72%,100% { opacity: 0; } }
-.dc-wink { animation: dcwinkopen 1.9s ease both; }
-.dc-winkline { animation: dcwinkline 1.9s ease both; }
 /* swipe-up hint chevron */
 @keyframes chevup { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-6px); opacity: 1; } }
 .chev-up { animation: chevup 1.4s ease-in-out infinite; }
