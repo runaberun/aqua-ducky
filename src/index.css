@@ -142,6 +142,8 @@ body {
   100% { transform: translateY(0) scale(1); }
 }
 .hero-sip { animation: herosip .5s ease; transform-origin: 50% 86%; }
+/* crossfade when the hero swaps to a new goal-remaining band */
+@keyframes herofade { from { opacity: 0; } to { opacity: 1; } }
 /* hero sunglasses drop onto the duck at goal, dip once, then settle */
 @keyframes hdshades {
   0%   { transform: translateY(-40px); opacity: 0; }
