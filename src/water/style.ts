@@ -11,9 +11,10 @@ export const BODY = "'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif"
 
 // ---- palette ----
 export const C = {
-  // paper background (matches the logo's cream canvas)
-  paper: '#f5f1e8',
-  paperGrad: 'radial-gradient(125% 82% at 50% -6%, #fdfbf6 0%, #f6f1e7 46%, #efe7d6 100%)',
+  // paper background — sampled from the hand-drawn ducky artwork's paper so the
+  // hero/splash images blend seamlessly into the screen (no visible square)
+  paper: '#eeeae7',
+  paperGrad: 'radial-gradient(130% 95% at 50% 2%, #f1edea 0%, #eeeae7 55%, #e8e3dd 100%)',
 
   // ink (text)
   ink: '#173a5e', // primary — deep blue, like the wordmark outline
@@ -47,3 +48,13 @@ export const C = {
   // scrim behind modals/sheets
   scrim: 'rgba(28,38,58,0.42)',
 }
+
+// Soft-feather for the hand-drawn artwork images: fade all four edges a few
+// percent so the paper background melts into the page (no visible square).
+const EDGE = '#000 0, #000 92%, transparent 100%'
+export const FEATHER = {
+  WebkitMaskImage: `linear-gradient(to top, ${EDGE}), linear-gradient(to bottom, ${EDGE}), linear-gradient(to left, ${EDGE}), linear-gradient(to right, ${EDGE})`,
+  WebkitMaskComposite: 'source-in',
+  maskImage: `linear-gradient(to top, ${EDGE}), linear-gradient(to bottom, ${EDGE}), linear-gradient(to left, ${EDGE}), linear-gradient(to right, ${EDGE})`,
+  maskComposite: 'intersect',
+} as const

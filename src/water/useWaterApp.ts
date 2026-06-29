@@ -81,19 +81,12 @@ function splitOz(oz: number): number[] {
 
 const DAY_HOURS = [8, 11, 14, 17, 20, 9, 16]
 
-// Seeded activity log: today (sums to 36 oz) + synthesized entries for the
-// last 29 days so the History ranges (7d / 30d) are populated and grouped.
+// Seeded activity log: today starts empty (a fresh day) + synthesized entries
+// for the last 29 days so the History ranges (7d / 30d) are populated/grouped.
 function buildSeedLog(history: DayRecord[]): LogEntry[] {
-  const now = Date.now()
   const H = 3600 * 1000
   let id = 1
-  const today: LogEntry[] = [
-    { id: id++, oz: 2, ts: now - 0.4 * H },
-    { id: id++, oz: 2, ts: now - 1.3 * H },
-    { id: id++, oz: 8, ts: now - 2.6 * H },
-    { id: id++, oz: 16, ts: now - 4.5 * H },
-    { id: id++, oz: 8, ts: now - 6.8 * H },
-  ]
+  const today: LogEntry[] = []
   const past: LogEntry[] = []
   const recent = history.slice(-29)
   for (let k = recent.length - 1; k >= 0; k--) {
@@ -126,7 +119,7 @@ export function useWaterApp() {
   const [goalOz, setGoalOz] = useState(cfgRef.current.goalOz)
   const [drops, setDropsState] = useState<DropConfig[]>(cfgRef.current.drops)
   const [onboarded, setOnboarded] = useState(cfgRef.current.onboarded)
-  const [consumedOz, setConsumedOz] = useState(36)
+  const [consumedOz, setConsumedOz] = useState(0)
   const [sipOz, setSipOz] = useState(8)
   // the most recent drink logged from the Today screen — powers the Undo pill
   const [lastLog, setLastLog] = useState<{ id: number; oz: number } | null>(null)
@@ -155,7 +148,7 @@ export function useWaterApp() {
   const nextId = () => idRef.current++
 
   // refs mirror state so multi-update handlers stay out of the state updaters
-  const consumedRef = useRef(36)
+  const consumedRef = useRef(0)
   const logRef = useRef<LogEntry[]>(log)
 
   // ------------------------------------------------------------------

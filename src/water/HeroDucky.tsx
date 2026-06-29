@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
+import { FEATHER } from './style'
 
 // The AquaDucky hero is a set of hand-drawn images, one per 10% band of the
 // daily goal *remaining*. As water is logged the remaining % drops and we swap
@@ -79,8 +80,9 @@ export function HeroDucky({
             height: '100%',
             display: 'block',
             userSelect: 'none',
+            ...FEATHER,
             // the topmost (latest) layer springs in over the previous one
-            animation: i === layers.length - 1 && layers.length > 1 ? 'heroswap .6s cubic-bezier(.34,1.4,.5,1) both' : undefined,
+            animation: i === layers.length - 1 && layers.length > 1 ? 'heroswap 1.15s cubic-bezier(.34,1.32,.5,1) both' : undefined,
           }}
         />
       ))}

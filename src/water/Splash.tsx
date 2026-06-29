@@ -1,3 +1,5 @@
+import { C, FEATHER } from './style'
+
 // Launch splash: the AquaDucky wordmark artwork (public/aquaducky-splash.svg)
 // springs in, then the screen fades into the app.
 export function Splash() {
@@ -11,7 +13,7 @@ export function Splash() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#f5f2ee', // matches the AquaDucky artwork's cream paper
+        background: C.paper, // same paper tone as the rest of the app
         animation: 'splashfade 3.4s ease forwards',
       }}
     >
@@ -20,7 +22,7 @@ export function Splash() {
           src={`${import.meta.env.BASE_URL}aquaducky-splash.svg`}
           alt="AquaDucky"
           draggable={false}
-          style={{ width: 'min(80vw, 360px)', height: 'auto', display: 'block', userSelect: 'none' }}
+          style={{ width: 'min(80vw, 360px)', height: 'auto', display: 'block', userSelect: 'none', ...FEATHER }}
         />
       </div>
     </div>

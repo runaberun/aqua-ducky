@@ -14,16 +14,7 @@ interface Props {
   onForgot: () => void
 }
 
-// Fast one-tap sizes — speed is what keeps people logging on day thirty.
-const PRESETS = [
-  { label: 'Sip', oz: 2 },
-  { label: 'Small', oz: 4 },
-  { label: 'Glass', oz: 8 },
-  { label: 'Bottle', oz: 16 },
-]
-
 export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, onForgot }: Props) {
-  const [open, setOpen] = useState(false)
   const [sipping, setSipping] = useState(false)
   // Undo pill visibility, driven by the most recent log
   const [showUndo, setShowUndo] = useState(false)
@@ -104,7 +95,7 @@ export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, 
 
         {/* the cup — a progress indicator; it drains as the day's water is logged */}
         <div style={{ marginTop: 6, userSelect: 'none', WebkitUserSelect: 'none' }}>
-          <HeroDucky fill={v.cupFill} goalDone={v.goalMet} sipping={sipping} width={240} />
+          <HeroDucky fill={v.cupFill} goalDone={v.goalMet} sipping={sipping} width={300} />
         </div>
 
         {/* progress + goal, below the duck */}
@@ -116,53 +107,36 @@ export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, 
           <div style={{ fontSize: 16, color: C.green, fontWeight: 800, marginTop: 8 }}>You did it, you lucky duck! 😎</div>
         )}
 
-        {/* ---- Log drink: fast one-tap presets + custom ---- */}
+        {/* ---- How much did you drink? — always visible, no extra tap ---- */}
         <div style={{ width: '100%', maxWidth: 340, marginTop: 14 }}>
-          {!open ? (
-            <button
-              className="press"
-              onClick={() => setOpen(true)}
-              style={{ width: '100%', height: 54, borderRadius: 16, border: 'none', background: C.blueGrad, color: '#fff', fontFamily: DISPLAY, fontSize: 19, fontWeight: 700, cursor: 'pointer', boxShadow: '0 10px 22px rgba(47,143,214,0.32)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 5v14M5 12h14" />
-              </svg>
-              Log drink
-            </button>
-          ) : (
-            <div style={{ animation: 'rise .22s ease both', borderRadius: 18, border: `1px solid ${C.border}`, background: C.card, boxShadow: C.cardShadow, padding: '14px 14px 16px' }}>
-              {/* header row */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                <span style={{ fontFamily: DISPLAY, fontSize: 15, fontWeight: 700, color: C.ink }}>How much did you drink?</span>
-                <button className="press" onClick={() => setOpen(false)} aria-label="Close" style={{ width: 26, height: 26, borderRadius: '50%', border: `1px solid ${C.border}`, background: C.cardWarm, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.ink2 }}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
-                </button>
-              </div>
+          <div style={{ borderRadius: 18, border: `1px solid ${C.border}`, background: C.card, boxShadow: C.cardShadow, padding: '14px 14px 16px' }}>
+            <div style={{ fontFamily: DISPLAY, fontSize: 15, fontWeight: 700, color: C.ink, marginBottom: 10 }}>How much did you drink?</div>
 
-              {/* fast one-tap presets */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
-                {PRESETS.map((p) => (
+            {/* quick-add buttons — the exact sizes configured in onboarding/settings */}
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${v.drops.length}, 1fr)`, gap: 8 }}>
+              {v.drops.map((d, i) =>
+                d.custom ? (
                   <button
-                    key={p.oz}
+                    key={`custom-${i}`}
                     className="press"
-                    onClick={() => logOz(p.oz)}
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, padding: '10px 0', borderRadius: 14, border: `1.5px solid ${C.border}`, background: C.cardWarm, cursor: 'pointer' }}
+                    onClick={onCustom}
+                    style={{ padding: '15px 0', borderRadius: 14, border: `1.5px dashed ${C.border}`, background: 'transparent', cursor: 'pointer', fontFamily: DISPLAY, fontSize: 17, fontWeight: 700, color: C.ink2 }}
                   >
-                    <span style={{ fontFamily: DISPLAY, fontSize: 19, fontWeight: 700, color: C.ink, fontVariantNumeric: 'tabular-nums' }}>{p.oz}</span>
-                    <span style={{ fontSize: 10.5, fontWeight: 700, color: C.ink2 }}>{p.label}</span>
+                    + Custom
                   </button>
-                ))}
-              </div>
-              <button
-                className="press"
-                onClick={onCustom}
-                style={{ width: '100%', marginTop: 8, height: 38, borderRadius: 12, border: `1.5px dashed ${C.border}`, background: 'transparent', cursor: 'pointer', color: C.ink2, fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.blue} strokeWidth="2.2" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg>
-                Custom amount
-              </button>
+                ) : (
+                  <button
+                    key={`${d.oz}-${i}`}
+                    className="press"
+                    onClick={() => logOz(d.oz)}
+                    style={{ padding: '15px 0', borderRadius: 14, border: `1.5px solid ${C.border}`, background: C.cardWarm, cursor: 'pointer', fontFamily: DISPLAY, fontSize: 18, fontWeight: 700, color: C.ink, fontVariantNumeric: 'tabular-nums' }}
+                  >
+                    +{d.oz} oz
+                  </button>
+                ),
+              )}
             </div>
-          )}
+          </div>
         </div>
 
         <div style={{ height: 16 }} />
