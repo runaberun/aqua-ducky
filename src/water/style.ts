@@ -48,13 +48,3 @@ export const C = {
   // scrim behind modals/sheets
   scrim: 'rgba(28,38,58,0.42)',
 }
-
-// Soft-feather for the hand-drawn artwork images: fade all four edges a few
-// percent so the paper background melts into the page (no visible square).
-const EDGE = '#000 0, #000 92%, transparent 100%'
-export const FEATHER = {
-  WebkitMaskImage: `linear-gradient(to top, ${EDGE}), linear-gradient(to bottom, ${EDGE}), linear-gradient(to left, ${EDGE}), linear-gradient(to right, ${EDGE})`,
-  WebkitMaskComposite: 'source-in',
-  maskImage: `linear-gradient(to top, ${EDGE}), linear-gradient(to bottom, ${EDGE}), linear-gradient(to left, ${EDGE}), linear-gradient(to right, ${EDGE})`,
-  maskComposite: 'intersect',
-} as const

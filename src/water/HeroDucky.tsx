@@ -1,32 +1,42 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { FEATHER } from './style'
 
-// The AquaDucky hero is a set of hand-drawn images, one per 10% band of the
-// daily goal *remaining*. As water is logged the remaining % drops and we swap
-// to the matching artwork.
+// The AquaDucky hero swaps between hand-drawn images by the % of the daily goal
+// *remaining* (= oz left / goal). The artwork file numbers were assigned
+// separately and do NOT line up with the band %, so this is an explicit lookup.
 //
-//   91-100%  -> ducky-100
-//   81-90%   -> ducky-90
-//   71-80%   -> ducky-80
-//   ...each band is the top of a 10-point range...
-//   1-10%    -> ducky-10
-//   0%       -> ducky-0     (goal reached: the duck kicks back with shades on)
-//
-// i.e. round the remaining % UP to the nearest 10 (and 0 is its own band).
-// BUCKETS lists the bands we have art for; any gap falls back to the closest.
-const BUCKETS = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0]
+// band = remaining% rounded UP to the nearest 10 (and 0 is its own band):
+//   91-100% -> band 100 -> ducky-60
+//   81-90%  -> band 90  -> ducky-70
+//   71-80%  -> band 80  -> ducky-80
+//   61-70%  -> band 70  -> ducky-90
+//   51-60%  -> band 60  -> ducky-100
+//   41-50%  -> band 50  -> ducky-10
+//   31-40%  -> band 40  -> ducky-20
+//   21-30%  -> band 30  -> ducky-30
+//   11-20%  -> band 20  -> ducky-40
+//   1-10%   -> band 10  -> ducky-50
+//   0%      -> band 0   -> ducky-0   (goal reached: shades on)
+const BAND_TO_FILE: Record<number, number> = {
+  100: 60,
+  90: 70,
+  80: 80,
+  70: 90,
+  60: 100,
+  50: 10,
+  40: 20,
+  30: 30,
+  20: 40,
+  10: 50,
+  0: 0,
+}
 
-function bucketFor(remainingPct: number): number {
+function srcFor(remainingPct: number): string {
   // round away tiny float error (e.g. 64/80*100 = 80.0000001) before bucketing
   const r = Math.max(0, Math.min(100, Math.round(remainingPct * 1e6) / 1e6))
   const band = r <= 0 ? 0 : Math.ceil(r / 10) * 10
-  if (BUCKETS.includes(band)) return band
-  return BUCKETS.reduce((best, b) => (Math.abs(b - band) < Math.abs(best - band) ? b : best), BUCKETS[0])
-}
-
-function srcFor(bucket: number): string {
-  return `${import.meta.env.BASE_URL}hero/ducky-${bucket}.webp`
+  const file = BAND_TO_FILE[band] ?? BAND_TO_FILE[100]
+  return `${import.meta.env.BASE_URL}hero/ducky-${file}.webp`
 }
 
 export function HeroDucky({
@@ -45,8 +55,7 @@ export function HeroDucky({
   style?: CSSProperties
 }) {
   const remainingPct = Math.max(0, Math.min(1, fill)) * 100
-  const bucket = bucketFor(remainingPct)
-  const src = srcFor(bucket)
+  const src = srcFor(remainingPct)
 
   // Crossfade between bands: keep the outgoing image underneath while the new
   // one fades in on top.
@@ -80,7 +89,6 @@ export function HeroDucky({
             height: '100%',
             display: 'block',
             userSelect: 'none',
-            ...FEATHER,
             // the topmost (latest) layer springs in over the previous one
             animation: i === layers.length - 1 && layers.length > 1 ? 'heroswap 1.15s cubic-bezier(.34,1.32,.5,1) both' : undefined,
           }}

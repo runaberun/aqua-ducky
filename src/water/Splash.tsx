@@ -1,7 +1,7 @@
-import { C, FEATHER } from './style'
+import { C } from './style'
 
-// Launch splash: the AquaDucky wordmark artwork (public/aquaducky-splash.svg)
-// springs in, then the screen fades into the app.
+// Launch splash: the AquaDucky wordmark artwork (public/aquaducky-splash.webp,
+// background removed) springs in, then the screen fades into the app.
 export function Splash() {
   return (
     <div
@@ -19,10 +19,10 @@ export function Splash() {
     >
       <div style={{ animation: 'logospring 1.05s cubic-bezier(.2,.8,.3,1) both', willChange: 'transform' }}>
         <img
-          src={`${import.meta.env.BASE_URL}aquaducky-splash.svg`}
+          src={`${import.meta.env.BASE_URL}aquaducky-splash.webp`}
           alt="AquaDucky"
           draggable={false}
-          style={{ width: 'min(80vw, 360px)', height: 'auto', display: 'block', userSelect: 'none', ...FEATHER }}
+          style={{ width: 'min(80vw, 360px)', height: 'auto', display: 'block', userSelect: 'none' }}
         />
       </div>
     </div>
