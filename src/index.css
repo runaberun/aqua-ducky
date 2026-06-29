@@ -144,6 +144,11 @@ body {
   82%  { transform: translateY(-3px) scale(1.012) rotate(0.5deg); }
   100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
 }
+/* goal-reached confetti burst near the finish line */
+@keyframes confettiPop {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(var(--cx), var(--cy)) rotate(var(--cr)) scale(0.4); opacity: 0; }
+}
 /* swipe-up hint chevron */
 @keyframes chevup { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-6px); opacity: 1; } }
 .chev-up { animation: chevup 1.4s ease-in-out infinite; }

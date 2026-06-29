@@ -3,6 +3,8 @@ import type { WaterView } from '../useWaterApp'
 import { DISPLAY, C } from '../style'
 import { CountUp } from '../CountUp'
 import { HeroDucky } from '../HeroDucky'
+import { GoalProgress } from '../GoalProgress'
+import { primeAudio, playGoalCue } from '../sound'
 
 interface Props {
   view: WaterView
@@ -36,10 +38,18 @@ export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, 
 
   const logOz = (oz: number) => {
     if (oz <= 0) return
+    primeAudio() // unlock audio within this tap so the goal cue can play
     setSipping(true)
     window.setTimeout(() => setSipping(false), 500)
     onLog(oz)
   }
+
+  // play the celebration cue once, when the goal is first reached
+  const celebrated = useRef(false)
+  useEffect(() => {
+    if (v.celebrate && !celebrated.current) playGoalCue()
+    celebrated.current = v.celebrate
+  }, [v.celebrate])
 
   return (
     <div data-screen-label="Today">
@@ -98,10 +108,8 @@ export function TodayA({ view: v, lastLog, onLog, onUndo, onCustom, onOpenGoal, 
           <HeroDucky fill={v.cupFill} goalDone={v.goalMet} sipping={sipping} width={300} />
         </div>
 
-        {/* progress + goal, below the duck */}
-        <div style={{ fontFamily: DISPLAY, fontSize: 16, color: C.ink2, fontWeight: 500, marginTop: 2, fontVariantNumeric: 'tabular-nums' }}>
-          <span style={{ color: C.ink, fontWeight: 600 }}>{v.consumedText}</span> / {v.goalText} oz today
-        </div>
+        {/* race to the goal: a duck travels to the checkered finish line */}
+        <GoalProgress consumed={v.consumedText} goal={v.goalText} celebrate={v.celebrate} />
 
         {v.goalMet && (
           <div style={{ fontSize: 16, color: C.green, fontWeight: 800, marginTop: 8 }}>You did it, you lucky duck! 😎</div>
